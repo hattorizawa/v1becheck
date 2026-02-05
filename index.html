@@ -474,9 +474,10 @@
 
         <aside class="volume-panel" hidden aria-label="Volume control" style="--volume: 0.62">
           <div class="volume-panel__slider" data-volume-slider role="slider" aria-label="Volume" aria-valuemin="0" aria-valuemax="100" aria-valuenow="62" tabindex="0">
-            <div class="volume-panel__track" aria-hidden="true"></div>
-            <div class="volume-panel__fill" aria-hidden="true"></div>
-            <div class="volume-panel__thumb" aria-hidden="true"></div>
+            <div class="volume-panel__max" aria-hidden="true">100</div>
+            <div class="volume-panel__handle" data-volume-handle aria-hidden="true">
+              <div class="volume-panel__min">0</div>
+            </div>
           </div>
         </aside>
 	      </div>
@@ -564,7 +565,7 @@
         </button>
 
         <div class="bottombar__passenger" aria-label="Passenger temperature">
-          <div class="bottombar__temp-value bottombar__temp-value--right" data-node-id="I1:942;277:1058">19.5°</div>
+	          <div class="bottombar__temp-value bottombar__temp-value--right" data-node-id="I1:942;277:1058">19.5°</div>
         </div>
       </footer>
     </div>
@@ -598,6 +599,9 @@
           var volumeButton = null;
           var volumePanel = null;
           var volumeSlider = null;
+          var volumeHandle = null;
+          var volumeDragOffset = 0;
+          var volumeDragging = false;
 
 	        function setPage(page) {
 	          var pages = document.querySelectorAll(".page[data-page]");
@@ -651,13 +655,27 @@
             volumePanel.style.setProperty("--volume", String(volumeValue));
             var now = Math.round(volumeValue * 100);
             volumeSlider.setAttribute("aria-valuenow", String(now));
+
+            if (volumeHandle) {
+              var sliderRect = volumeSlider.getBoundingClientRect();
+              var handleRect = volumeHandle.getBoundingClientRect();
+              var handleHeight = handleRect.height || 620;
+              var topMin = 160;
+              var topMax = sliderRect.height - 16 - handleHeight;
+              var top = topMin + (1 - volumeValue) * (topMax - topMin);
+              volumeHandle.style.top = Math.round(top) + "px";
+            }
           }
 
           function setVolumeFromPointer(evt) {
             if (!volumeSlider) return;
             var rect = volumeSlider.getBoundingClientRect();
-            var y = evt.clientY - rect.top;
-            var ratio = 1 - y / rect.height;
+            var handleHeight = (volumeHandle && volumeHandle.getBoundingClientRect().height) || 620;
+            var topMin = 160;
+            var topMax = rect.height - 16 - handleHeight;
+            var y = evt.clientY - rect.top - volumeDragOffset;
+            var top = clamp(y, topMin, topMax);
+            var ratio = 1 - (top - topMin) / (topMax - topMin);
             volumeValue = clamp(ratio, 0, 1);
             renderVolume();
           }
@@ -670,16 +688,39 @@
             volumeButton = document.querySelector(".bottombar__volume");
             volumePanel = document.querySelector(".volume-panel");
             volumeSlider = document.querySelector("[data-volume-slider]");
+            volumeHandle = document.querySelector("[data-volume-handle]");
             syncVolumePanel();
             renderVolume();
 
+            if (volumeHandle) {
+              volumeHandle.addEventListener("pointerdown", function (evt) {
+                volumeDragging = true;
+                var rect = volumeHandle.getBoundingClientRect();
+                volumeDragOffset = evt.clientY - rect.top;
+                setVolumeFromPointer(evt);
+                volumeHandle.setPointerCapture && volumeHandle.setPointerCapture(evt.pointerId);
+              });
+              volumeHandle.addEventListener("pointermove", function (evt) {
+                if (!volumeDragging) return;
+                setVolumeFromPointer(evt);
+              });
+              volumeHandle.addEventListener("pointerup", function () {
+                volumeDragging = false;
+              });
+              volumeHandle.addEventListener("pointercancel", function () {
+                volumeDragging = false;
+              });
+            }
+
             if (volumeSlider) {
               volumeSlider.addEventListener("pointerdown", function (evt) {
+                if (evt.target && evt.target.closest && evt.target.closest("[data-volume-handle]")) return;
+                volumeDragOffset = 0;
                 setVolumeFromPointer(evt);
                 volumeSlider.setPointerCapture && volumeSlider.setPointerCapture(evt.pointerId);
               });
               volumeSlider.addEventListener("pointermove", function (evt) {
-                if (evt.buttons) setVolumeFromPointer(evt);
+                if (evt.buttons && !(evt.target && evt.target.closest && evt.target.closest("[data-volume-handle]"))) setVolumeFromPointer(evt);
               });
               volumeSlider.addEventListener("keydown", function (evt) {
                 if (evt.key === "ArrowUp" || evt.key === "ArrowRight") {
