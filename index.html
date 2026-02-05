@@ -95,13 +95,15 @@
               <div class="climate__slider-value" data-node-id="1:910">5</div>
               </div>
 
-              <div class="climate__modes" data-node-id="1:893" aria-label="Climate modes">
-                <button class="mode" data-toggle="toggle" aria-pressed="true" data-node-id="1:894" type="button">AUTO</button>
-                <button class="mode" data-toggle="toggle" aria-pressed="true" data-node-id="1:896" type="button">AC</button>
-                <button class="mode" data-toggle="toggle" aria-pressed="false" data-node-id="1:898" type="button" aria-label="Air recirculation">
-                  <img class="mode__icon" data-node-id="1:899" alt="" src="https://www.figma.com/api/mcp/asset/291c7ecb-58ea-4be4-a7ae-96260adf6b32" />
-                </button>
-              </div>
+	              <div class="climate__modes" data-node-id="1:893" aria-label="Climate modes">
+	                <button class="mode" data-toggle="toggle" aria-pressed="true" data-node-id="1:894" type="button">AUTO</button>
+	                <button class="mode" data-toggle="toggle" aria-pressed="true" data-node-id="1:896" type="button">AC</button>
+	                <button class="mode" data-toggle="toggle" aria-pressed="false" data-node-id="1:898" type="button" aria-label="Air recirculation">
+	                  <span class="iconbox iconbox--recirc" aria-hidden="true">
+	                    <img class="iconbox__img" data-node-id="1:899" alt="" src="https://www.figma.com/api/mcp/asset/291c7ecb-58ea-4be4-a7ae-96260adf6b32" />
+	                  </span>
+	                </button>
+	              </div>
             </section>
 
             <section class="card range-card" data-node-id="1:911" aria-label="Range info">
@@ -212,7 +214,37 @@
             </div>
           </section>
 
-          <!-- Rightmost (partially visible) widget removed per request. -->
+          <section class="card thirdparty-card" data-node-id="5322:18938" aria-label="3rd party">
+            <div class="thirdparty__serial" data-node-id="5322:18939" aria-label="Serial">
+              <div class="thirdparty__image" data-node-id="5322:18940" aria-hidden="true">
+                <img class="thirdparty__image-img" alt="" src="https://www.figma.com/api/mcp/asset/9a2b02dd-1e70-4dfe-9a38-64e496f6e2dc" />
+              </div>
+              <div class="thirdparty__titlebar" data-node-id="5322:18941" aria-label="Title">
+                <div class="thirdparty__title" data-node-id="5322:18942">The Queen’s Gambit</div>
+                <div class="thirdparty__subtitle" data-node-id="5322:18943">1 season 4 ep</div>
+              </div>
+            </div>
+
+            <button class="thirdparty__row" data-node-id="5322:18944" type="button" aria-label="GDR Season 2">
+              <span class="thirdparty__cover" data-node-id="5322:18945" aria-hidden="true">
+                <img class="thirdparty__cover-img" alt="" src="https://www.figma.com/api/mcp/asset/7b228e0f-9beb-4b92-93b8-d732e593c970" />
+              </span>
+              <span class="thirdparty__text" data-node-id="5322:18946" aria-hidden="true">
+                <span class="thirdparty__name" data-node-id="5322:18947">GDR Season 2</span>
+                <span class="thirdparty__hint" data-node-id="5322:18948">Watch Trailer</span>
+              </span>
+            </button>
+
+            <button class="thirdparty__row" data-node-id="5322:18949" type="button" aria-label="Money launderer">
+              <span class="thirdparty__cover" data-node-id="5322:18950" aria-hidden="true">
+                <img class="thirdparty__cover-img" alt="" src="https://www.figma.com/api/mcp/asset/3bb3034f-6b15-4424-a04c-4b62ef89f735" />
+              </span>
+              <span class="thirdparty__text" data-node-id="5322:18951" aria-hidden="true">
+                <span class="thirdparty__name" data-node-id="5322:18952">Money launderer</span>
+                <span class="thirdparty__hint" data-node-id="5322:18953">Coming soon</span>
+              </span>
+            </button>
+          </section>
           </main>
         </section>
 
@@ -297,42 +329,86 @@
         </section>
 
         <section class="page" data-page="settings" hidden aria-label="Settings">
-          <main class="settings" aria-label="Settings">
-            <aside class="settings__menu" aria-label="Settings menu">
-              <button class="settings__item" type="button" aria-pressed="true">General</button>
-              <button class="settings__item" type="button" aria-pressed="false">Display</button>
-              <button class="settings__item" type="button" aria-pressed="false">Sound</button>
-              <button class="settings__item" type="button" aria-pressed="false">Connectivity</button>
-              <button class="settings__item" type="button" aria-pressed="false">Vehicle</button>
+          <main class="settings-screen" aria-label="Settings">
+            <aside class="settings-menu" aria-label="Settings menu">
+              <div class="settings-menu__panel">
+                <div class="settings-menu__cols">
+                  <div class="settings-menu__col" data-settings-group="main" aria-label="Main menu">
+                    <button class="settings-menu__item" type="button" aria-pressed="false">Car settings</button>
+                    <button class="settings-menu__item" type="button" aria-pressed="false">Driving Assist</button>
+                    <button class="settings-menu__item" type="button" aria-pressed="false">Display</button>
+                    <button class="settings-menu__item" type="button" aria-pressed="false">Sound</button>
+                    <button class="settings-menu__item" type="button" aria-pressed="false">Network</button>
+                    <button class="settings-menu__item" type="button" aria-pressed="false">Bluetooth</button>
+                    <div class="settings-menu__push"></div>
+                    <button class="settings-menu__item settings-menu__item--pill" type="button" aria-pressed="true">General</button>
+                  </div>
+
+                  <div class="settings-menu__divider" aria-hidden="true"></div>
+
+                  <div class="settings-menu__col" data-settings-group="sub" aria-label="Sub menu">
+                    <button class="settings-menu__item" type="button" aria-pressed="false">Drive</button>
+                    <button class="settings-menu__item" type="button" aria-pressed="false">Light</button>
+                    <button class="settings-menu__item" type="button" aria-pressed="false">Window</button>
+                    <button class="settings-menu__item settings-menu__item--pill" type="button" aria-pressed="true">Mirror</button>
+                    <button class="settings-menu__item" type="button" aria-pressed="false">Seat</button>
+                    <button class="settings-menu__item" type="button" aria-pressed="false">Sunshade</button>
+                    <button class="settings-menu__item" type="button" aria-pressed="false">Door</button>
+                    <button class="settings-menu__item" type="button" aria-pressed="false">Charging</button>
+                  </div>
+                </div>
+              </div>
             </aside>
 
-            <section class="settings__content" aria-label="Settings content">
-              <header class="settings__header">
-                <h1 class="settings__title">Settings</h1>
-                <p class="settings__subtitle">General preferences and system controls.</p>
-              </header>
+            <section class="settings-content" aria-label="Settings content">
+              <div class="settings-content__title">Title</div>
 
-              <div class="settings__block" aria-label="Block 1">
-                <div class="settings__block-title">General</div>
-                <div class="settings__block-desc">System language, time, units.</div>
-                <div class="settings__actions">
-                  <button class="settings__action" type="button" data-toggle="toggle" aria-pressed="false">Off</button>
-                  <button class="settings__action" type="button" data-toggle="toggle" aria-pressed="true">On</button>
+              <button class="settings-content__button settings-content__button--full" type="button">BUTTON</button>
+
+              <div class="settings-cell">
+                <div class="settings-cell__text">
+                  <div class="settings-cell__title">Title</div>
+                  <div class="settings-cell__desc">Description</div>
+                </div>
+                <button class="switch" type="button" data-toggle="toggle" aria-pressed="true" aria-label="Toggle">
+                  <span class="switch__thumb" aria-hidden="true"></span>
+                </button>
+              </div>
+
+              <div class="settings-cell">
+                <div class="settings-cell__text">
+                  <div class="settings-cell__title">Title</div>
+                  <div class="settings-cell__desc">Description</div>
+                </div>
+                <button class="switch" type="button" data-toggle="toggle" aria-pressed="false" aria-label="Toggle">
+                  <span class="switch__thumb" aria-hidden="true"></span>
+                </button>
+              </div>
+
+              <div class="settings-cell settings-cell--no-switch">
+                <div class="settings-cell__text">
+                  <div class="settings-cell__title">Title</div>
+                  <div class="settings-cell__desc">Description</div>
                 </div>
               </div>
 
-              <button class="settings__row" type="button" aria-label="More options">
-                <span class="settings__row-text">More</span>
-                <span class="iconbox iconbox--chevron" aria-hidden="true">
-                  <img class="iconbox__img" alt="" src="https://www.figma.com/api/mcp/asset/25112dac-89bf-4df6-bfc0-947d6be648ee" />
+              <div class="settings-content__buttonrow" role="group" aria-label="Actions">
+                <button class="settings-content__button settings-content__button--half" type="button">BUTTON</button>
+                <button class="settings-content__button settings-content__button--half" type="button">BUTTON</button>
+              </div>
+
+              <button class="settings-link" type="button" aria-label="Title">
+                <span class="settings-link__text">Title</span>
+                <span class="iconbox iconbox--chevron settings-link__chevron" aria-hidden="true">
+                  <img class="iconbox__img" alt="" src="https://www.figma.com/api/mcp/asset/712a8ab5-8fa7-43f2-9631-912713a43472" />
                 </span>
               </button>
             </section>
           </main>
         </section>
 
-        <section class="page" data-page="navigator" hidden aria-label="Navigator">
-          <main class="navpage" aria-label="Navigation page">
+	        <section class="page" data-page="navigator" hidden aria-label="Navigator">
+	          <main class="navpage" aria-label="Navigation page">
             <div class="navpage__map" aria-hidden="true"></div>
 
             <div class="navpage__top-left" aria-label="Navigation status">
@@ -393,13 +469,21 @@
                 <button class="navpage__route-close" type="button" aria-label="Close">×</button>
               </div>
             </div>
-          </main>
-        </section>
-      </div>
+	          </main>
+	        </section>
 
-      <footer class="bottombar" data-node-id="1:942" aria-label="Bottom bar">
-        <div class="bottombar__driver" aria-label="Driver temperature">
-          <div class="bottombar__temp-value" data-node-id="I1:942;276:991">27.5°</div>
+        <aside class="volume-panel" hidden aria-label="Volume control" style="--volume: 0.62">
+          <div class="volume-panel__slider" data-volume-slider role="slider" aria-label="Volume" aria-valuemin="0" aria-valuemax="100" aria-valuenow="62" tabindex="0">
+            <div class="volume-panel__track" aria-hidden="true"></div>
+            <div class="volume-panel__fill" aria-hidden="true"></div>
+            <div class="volume-panel__thumb" aria-hidden="true"></div>
+          </div>
+        </aside>
+	      </div>
+
+	      <footer class="bottombar" data-node-id="1:942" aria-label="Bottom bar">
+	        <div class="bottombar__driver" aria-label="Driver temperature">
+	          <div class="bottombar__temp-value" data-node-id="I1:942;276:991">27.5°</div>
         </div>
 
         <div class="bottombar__demists" aria-label="Demists">
@@ -418,7 +502,7 @@
         </div>
 
         <div class="bottombar__nav" aria-label="Navigation bar">
-          <div class="bottombar__navgroup" aria-label="Left navigation">
+          <div class="bottombar__navgroup bottombar__navgroup--left" aria-label="Left navigation">
             <button class="navicon" type="button" aria-label="Home" aria-pressed="true" data-nav-to="home">
               <span class="iconbox iconbox--home" aria-hidden="true">
                 <img class="iconbox__img navicon__img--invert" alt="" src="https://www.figma.com/api/mcp/asset/9d0c54d2-0d8c-4f33-82b4-a9b3ea5c7026" />
@@ -445,11 +529,7 @@
             </button>
           </div>
 
-          <button class="bottombar__va" type="button" aria-label="Voice assistant">
-            <img class="bottombar__va-img" alt="" src="https://www.figma.com/api/mcp/asset/c05c6406-51b8-474c-a916-0e8396aa0f17" />
-          </button>
-
-          <div class="bottombar__navgroup" aria-label="Right navigation">
+          <div class="bottombar__navgroup bottombar__navgroup--right" aria-label="Right navigation">
             <button class="navicon" type="button" aria-label="Media" aria-pressed="false" data-segment-item="media">
               <span class="iconbox" aria-hidden="true">
                 <img class="iconbox__img navicon__img--invert" alt="" src="https://www.figma.com/api/mcp/asset/ef87011a-3737-4fe3-9393-977f0bdfdbef" />
@@ -472,6 +552,10 @@
             </button>
           </div>
         </div>
+
+        <button class="bottombar__va" type="button" aria-label="Voice assistant">
+          <img class="bottombar__va-img" alt="" src="https://www.figma.com/api/mcp/asset/c05c6406-51b8-474c-a916-0e8396aa0f17" />
+        </button>
 
         <button class="bottombar__volume" type="button" aria-label="Volume" aria-pressed="false" data-toggle="toggle">
           <span class="iconbox iconbox--volume" aria-hidden="true">
@@ -509,12 +593,16 @@
           },
         ];
 
-        var activeDriveIndex = 1;
+	        var activeDriveIndex = 1;
+          var volumeValue = 0.62;
+          var volumeButton = null;
+          var volumePanel = null;
+          var volumeSlider = null;
 
-        function setPage(page) {
-          var pages = document.querySelectorAll(".page[data-page]");
-          pages.forEach(function (p) {
-            p.hidden = p.getAttribute("data-page") !== page;
+	        function setPage(page) {
+	          var pages = document.querySelectorAll(".page[data-page]");
+	          pages.forEach(function (p) {
+	            p.hidden = p.getAttribute("data-page") !== page;
           });
 
           var navButtons = document.querySelectorAll("button[data-nav-to]");
@@ -523,9 +611,9 @@
           });
         }
 
-        function updateDriveSelector() {
-          var selector = document.querySelector("[data-drive-selector]");
-          if (!selector) return;
+	        function updateDriveSelector() {
+	          var selector = document.querySelector("[data-drive-selector]");
+	          if (!selector) return;
 
           var prev = (activeDriveIndex + driveModes.length - 1) % driveModes.length;
           var next = (activeDriveIndex + 1) % driveModes.length;
@@ -545,23 +633,91 @@
           if (imgPrev) imgPrev.src = driveModes[prev].icon;
           if (imgNext) imgNext.src = driveModes[next].icon;
           if (imgActive) imgActive.src = driveModes[activeDriveIndex].icon;
-          if (labelActive) labelActive.textContent = driveModes[activeDriveIndex].label;
-        }
+	          if (labelActive) labelActive.textContent = driveModes[activeDriveIndex].label;
+	        }
 
-        function init() {
-          var activeNav = document.querySelector('button[data-nav-to][aria-pressed="true"]');
-          if (activeNav) setPage(activeNav.getAttribute("data-nav-to"));
-          updateDriveSelector();
+          function clamp(v, min, max) {
+            return Math.min(max, Math.max(min, v));
+          }
+
+          function syncVolumePanel() {
+            if (!volumeButton || !volumePanel) return;
+            volumePanel.hidden = volumeButton.getAttribute("aria-pressed") !== "true";
+          }
+
+          function renderVolume() {
+            if (!volumePanel || !volumeSlider) return;
+            volumeValue = clamp(volumeValue, 0, 1);
+            volumePanel.style.setProperty("--volume", String(volumeValue));
+            var now = Math.round(volumeValue * 100);
+            volumeSlider.setAttribute("aria-valuenow", String(now));
+          }
+
+          function setVolumeFromPointer(evt) {
+            if (!volumeSlider) return;
+            var rect = volumeSlider.getBoundingClientRect();
+            var y = evt.clientY - rect.top;
+            var ratio = 1 - y / rect.height;
+            volumeValue = clamp(ratio, 0, 1);
+            renderVolume();
+          }
+
+	        function init() {
+	          var activeNav = document.querySelector('button[data-nav-to][aria-pressed="true"]');
+	          if (activeNav) setPage(activeNav.getAttribute("data-nav-to"));
+	          updateDriveSelector();
+
+            volumeButton = document.querySelector(".bottombar__volume");
+            volumePanel = document.querySelector(".volume-panel");
+            volumeSlider = document.querySelector("[data-volume-slider]");
+            syncVolumePanel();
+            renderVolume();
+
+            if (volumeSlider) {
+              volumeSlider.addEventListener("pointerdown", function (evt) {
+                setVolumeFromPointer(evt);
+                volumeSlider.setPointerCapture && volumeSlider.setPointerCapture(evt.pointerId);
+              });
+              volumeSlider.addEventListener("pointermove", function (evt) {
+                if (evt.buttons) setVolumeFromPointer(evt);
+              });
+              volumeSlider.addEventListener("keydown", function (evt) {
+                if (evt.key === "ArrowUp" || evt.key === "ArrowRight") {
+                  volumeValue = clamp(volumeValue + 0.05, 0, 1);
+                  renderVolume();
+                  evt.preventDefault();
+                }
+                if (evt.key === "ArrowDown" || evt.key === "ArrowLeft") {
+                  volumeValue = clamp(volumeValue - 0.05, 0, 1);
+                  renderVolume();
+                  evt.preventDefault();
+                }
+              });
+            }
+
+	          var widgets = document.querySelector(".widgets");
+	          if (widgets) {
+	            widgets.addEventListener(
+              "wheel",
+              function (evt) {
+                if (Math.abs(evt.deltaY) > Math.abs(evt.deltaX)) {
+                  widgets.scrollLeft += evt.deltaY;
+                  evt.preventDefault();
+                }
+              },
+              { passive: false }
+            );
+          }
         }
 
         document.addEventListener("click", function (e) {
           var btn = closestButton(e.target);
           if (!btn) return;
 
-          if (btn.classList && btn.classList.contains("settings__item")) {
-            var menu = btn.closest(".settings__menu");
-            if (menu) {
-              var items = menu.querySelectorAll(".settings__item");
+          if (btn.classList && btn.classList.contains("settings-menu__item")) {
+            var groupCol = btn.closest("[data-settings-group]");
+            if (groupCol) {
+              var items = groupCol.querySelectorAll(".settings-menu__item");
               items.forEach(function (it) {
                 it.setAttribute("aria-pressed", it === btn ? "true" : "false");
               });
@@ -588,11 +744,14 @@
           }
 
           var toggle = btn.getAttribute("data-toggle");
-          if (toggle === "toggle") {
-            var pressed = btn.getAttribute("aria-pressed") === "true";
-            btn.setAttribute("aria-pressed", String(!pressed));
-          }
-        });
+	          if (toggle === "toggle") {
+	            var pressed = btn.getAttribute("aria-pressed") === "true";
+	            btn.setAttribute("aria-pressed", String(!pressed));
+              if (btn.classList && btn.classList.contains("bottombar__volume")) {
+                syncVolumePanel();
+              }
+	          }
+	        });
 
         init();
       })();
