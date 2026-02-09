@@ -195,15 +195,19 @@ html[data-fav-open="true"] .topbar__handle {
 }
 
 html[data-page="climate"] .topbar__left,
-html[data-page="climate"] .topbar__label {
+html[data-page="climate"] .topbar__label,
+html[data-page="media"] .topbar__left,
+html[data-page="media"] .topbar__label {
   color: #f5f7ff;
 }
 
-html[data-page="climate"] .topbar__handle {
+html[data-page="climate"] .topbar__handle,
+html[data-page="media"] .topbar__handle {
   background: rgba(255, 255, 255, 0.7);
 }
 
-html[data-page="climate"] .topbar .iconbox__img {
+html[data-page="climate"] .topbar .iconbox__img,
+html[data-page="media"] .topbar .iconbox__img {
   filter: brightness(2.6) saturate(0);
 }
 
@@ -1733,19 +1737,19 @@ html[data-page="climate"] .topbar .iconbox__img {
 .bottombar__va {
   position: absolute;
   left: 50%;
-  top: 0;
-  transform: translateX(-50%);
-  width: var(--va-width);
-  height: 120px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 344px;
+  height: 80px;
   display: grid;
   place-items: center;
   cursor: pointer;
 }
 
 .bottombar__va-img {
-  width: var(--icon-inner);
-  height: var(--icon-inner);
-  padding: var(--icon-pad);
+  width: 100px;
+  height: 100px;
+  padding: 0;
   box-sizing: content-box;
   display: block;
   mix-blend-mode: screen;
@@ -1777,12 +1781,11 @@ html[data-page="climate"] .topbar .iconbox__img {
   line-height: 40px;
   font-weight: 500;
   text-transform: uppercase;
-  color: var(--warning);
+  color: #ffffff;
   white-space: nowrap;
 }
 
 .bottombar__temp-value--right {
-  color: var(--cool);
   text-align: right;
 }
 
@@ -2282,6 +2285,183 @@ html[data-page="climate"] .topbar .iconbox__img {
   border-radius: 80px;
 }
 
+/* Camera page */
+.camera-page {
+  position: absolute;
+  left: 32px;
+  top: 80px;
+  width: calc(1920px - 64px);
+  height: 848px;
+  display: flex;
+  gap: 16px;
+}
+
+.camera-page__panel {
+  position: relative;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.camera-page__panel--left {
+  width: 562px;
+  height: 848px;
+  background: #ffffff;
+}
+
+.camera-page__panel--right {
+  width: 1282px;
+  height: 848px;
+  background: #efefef;
+}
+
+.camera-page__view-bg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 610px;
+  height: 888px;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.camera-page__segment {
+  position: absolute;
+  left: 40px;
+  top: 40px;
+  width: 224px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  background: #d1dee7;
+  border-radius: 50px;
+  padding: 0;
+  gap: 0;
+}
+
+.camera-page__segment-btn {
+  height: 90px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  font-size: 28px;
+  line-height: 32px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #375b71;
+}
+
+.camera-page__segment-btn--active {
+  width: 120px;
+  background: #ffffff;
+  border-radius: 50px;
+}
+
+.camera-page__segment-btn:not(.camera-page__segment-btn--active) {
+  width: 104px;
+  border-radius: 20px;
+}
+
+.camera-page__car {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 296px;
+  height: 504px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.camera-page__car-shadow {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 446px;
+  height: 446px;
+  transform: translate(-50%, -50%);
+}
+
+.camera-page__car-glow {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 594px;
+  height: 460px;
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.camera-page__car-img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 518px;
+  height: 515px;
+  transform: translate(-50%, -50%);
+}
+
+.camera-page__car-extra {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 217px;
+  height: 467px;
+  transform: translate(-50%, -50%);
+}
+
+.camera-page__points {
+  position: absolute;
+  left: 112px;
+  top: 138px;
+  width: 320px;
+  height: 627px;
+  pointer-events: none;
+}
+
+.camera-page__park {
+  position: absolute;
+  right: 40px;
+  top: 138px;
+  width: 259px;
+  height: 627px;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+
+.camera-page__park-img {
+  width: 627px;
+  height: 259px;
+  transform: rotate(90deg);
+}
+
+.camera-page__bottom-mask {
+  position: absolute;
+  left: 0;
+  top: 582px;
+  width: 610px;
+  height: 276px;
+  background-image: url("https://www.figma.com/api/mcp/asset/2dea3db6-822c-4d39-badc-186aa6027fbc");
+  background-size: 651.199px 997.63px;
+  background-position: -37px -121px;
+  background-repeat: no-repeat;
+  -webkit-mask-image: url("https://www.figma.com/api/mcp/asset/cd3bbffa-231c-457f-ad75-490f5798e22b");
+  mask-image: url("https://www.figma.com/api/mcp/asset/cd3bbffa-231c-457f-ad75-490f5798e22b");
+  -webkit-mask-size: 651.199px 997.63px;
+  mask-size: 651.199px 997.63px;
+  -webkit-mask-position: -20.816px -636.815px;
+  mask-position: -20.816px -636.815px;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  pointer-events: none;
+}
+
+.camera-page__feed {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
 /* Climate page */
 .climate-page {
   position: absolute;
@@ -2342,7 +2522,7 @@ html[data-page="climate"] .topbar .iconbox__img {
   top: 73px;
   width: 88px;
   height: 887px;
-  opacity: 0.9;
+  opacity: 0.5;
 }
 
 .climate-page__ticks::before {
