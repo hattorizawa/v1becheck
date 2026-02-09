@@ -4,13 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Main Widgets REEV</title>
+    <link rel="stylesheet" href="./tokens.css" />
+    <link rel="stylesheet" href="./base.css" />
+    <link rel="stylesheet" href="./ui.css" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <div class="screen" data-node-id="1:804" aria-label="Main Widgets REEV">
       <div class="surface" data-node-id="1:805">
         <header class="topbar" data-node-id="1:806">
-          <div class="topbar__handle" data-node-id="1:807" aria-hidden="true"></div>
+          <div class="topbar__handle handle" data-node-id="1:807" aria-hidden="true"></div>
 
           <div class="topbar__left" data-node-id="1:808">
             <div class="topbar__time" data-node-id="1:809">12:40</div>
@@ -409,20 +412,20 @@
 
         <aside class="favorites-sheet" hidden aria-label="Favorites" data-favorites-sheet>
           <div class="favorites-sheet__panel" role="dialog" aria-modal="false" aria-label="Favorites panel">
-            <div class="favorites-switcher" role="tablist" aria-label="Favorites tabs">
-              <span class="favorites-switcher__active" aria-hidden="true"></span>
-              <button class="favorites-switcher__tab favorites-switcher__tab--active" type="button" role="tab" aria-selected="true" data-favorites-tab="favorites">
-                <img class="favorites-switcher__icon" alt="" src="https://www.figma.com/api/mcp/asset/dabac438-c302-4865-997e-8e51dde4435d" />
-                <span class="favorites-switcher__label">Favourites</span>
+            <div class="tabs favorites-tabs" role="tablist" aria-label="Favorites tabs">
+              <span class="tabs__indicator" aria-hidden="true"></span>
+              <button class="btn btn--secondary btn--md btn--pill favorites-tab" type="button" role="tab" aria-selected="true" data-favorites-tab="favorites">
+                <img class="btn__icon" alt="" src="https://www.figma.com/api/mcp/asset/dabac438-c302-4865-997e-8e51dde4435d" />
+                <span>Favourites</span>
               </button>
-              <button class="favorites-switcher__tab" type="button" role="tab" aria-selected="false" data-favorites-tab="notifications">
-                <img class="favorites-switcher__icon" alt="" src="https://www.figma.com/api/mcp/asset/fcf59c91-2fe3-495c-97ce-cc57e305f6b6" />
-                <span class="favorites-switcher__label">Notifications</span>
+              <button class="btn btn--secondary btn--md btn--pill favorites-tab" type="button" role="tab" aria-selected="false" data-favorites-tab="notifications">
+                <img class="btn__icon" alt="" src="https://www.figma.com/api/mcp/asset/fcf59c91-2fe3-495c-97ce-cc57e305f6b6" />
+                <span>Notifications</span>
               </button>
             </div>
 
             <div class="favorites-view favorites-view--active" data-favorites-view="favorites" role="tabpanel" aria-label="Favourites">
-              <button class="fav-btn fav-btn--wide fav-btn--active" type="button" style="left: 320px; top: 240px">
+              <button class="btn btn--primary btn--lg fav-btn fav-btn--wide" type="button" style="left: 320px; top: 240px">
                 <img class="fav-btn__icon fav-btn__icon--eco" alt="" src="https://www.figma.com/api/mcp/asset/c427182f-a8bc-4d46-a2b0-907c10fc0bca" />
                 <span class="fav-btn__label">Eco mode</span>
               </button>
@@ -436,32 +439,32 @@
                 <img class="fav-slider__icon" alt="" src="https://www.figma.com/api/mcp/asset/1c5d9fa6-edb5-4d0e-95f9-c37331f0c4ce" />
               </div>
 
-              <button class="fav-btn fav-btn--wide" type="button" style="left: 1184px; top: 240px">
+              <button class="btn btn--secondary btn--lg fav-btn fav-btn--wide" type="button" style="left: 1184px; top: 240px">
                 <img class="fav-btn__icon" alt="" src="https://www.figma.com/api/mcp/asset/f28895e4-dead-4cdb-b833-2cb9d136c00b" />
                 <span class="fav-btn__label">Wi-fi</span>
               </button>
 
-              <button class="fav-btn fav-btn--wide fav-btn--active" type="button" style="left: 1184px; top: 456px">
+              <button class="btn btn--primary btn--lg fav-btn fav-btn--wide" type="button" style="left: 1184px; top: 456px">
                 <img class="fav-btn__icon" alt="" src="https://www.figma.com/api/mcp/asset/6b1a3626-c905-4c45-a446-452d75de9e4a" />
                 <span class="fav-btn__label">One Plus</span>
               </button>
 
-              <button class="fav-btn" type="button" aria-label="Trunk" style="left: 320px; top: 456px">
+              <button class="btn btn--secondary btn--md fav-btn" type="button" aria-label="Trunk" style="left: 320px; top: 456px">
                 <img class="fav-btn__icon" alt="" src="https://www.figma.com/api/mcp/asset/4e3a3a9e-420b-416e-a26a-744dc18cf3ca" />
               </button>
-              <button class="fav-btn fav-btn--active" type="button" aria-label="Auto hold" style="left: 536px; top: 456px">
+              <button class="btn btn--primary btn--md fav-btn" type="button" aria-label="Auto hold" style="left: 536px; top: 456px">
                 <img class="fav-btn__icon" alt="" src="https://www.figma.com/api/mcp/asset/a80b5a4e-9649-4501-b26d-4939f36c3dfd" />
               </button>
-              <button class="fav-btn" type="button" aria-label="Lock" style="left: 320px; top: 672px">
+              <button class="btn btn--secondary btn--md fav-btn" type="button" aria-label="Lock" style="left: 320px; top: 672px">
                 <img class="fav-btn__icon" alt="" src="https://www.figma.com/api/mcp/asset/758765f6-2efa-4d3e-91cc-1996d6ade8da" />
               </button>
-              <button class="fav-btn" type="button" aria-label="Mirror tilt" style="left: 536px; top: 672px">
+              <button class="btn btn--secondary btn--md fav-btn" type="button" aria-label="Mirror tilt" style="left: 536px; top: 672px">
                 <img class="fav-btn__icon" alt="" src="https://www.figma.com/api/mcp/asset/88d209ec-42c2-4b86-9770-24419814fe41" />
               </button>
-              <button class="fav-btn" type="button" aria-label="Moon" style="left: 1184px; top: 672px">
+              <button class="btn btn--secondary btn--md fav-btn" type="button" aria-label="Moon" style="left: 1184px; top: 672px">
                 <img class="fav-btn__icon" alt="" src="https://www.figma.com/api/mcp/asset/86450e0e-d48b-439a-bc17-11a518851fbc" />
               </button>
-              <button class="fav-btn fav-btn--active" type="button" aria-label="Mute" style="left: 1400px; top: 672px">
+              <button class="btn btn--primary btn--md fav-btn" type="button" aria-label="Mute" style="left: 1400px; top: 672px">
                 <img class="fav-btn__icon" alt="" src="https://www.figma.com/api/mcp/asset/bff251c5-adf9-4cb3-82fc-57525b655af8" />
               </button>
             </div>
@@ -470,7 +473,7 @@
               <div class="favorites-empty">Notifications (coming soon)</div>
             </div>
 
-            <button class="favorites-sheet__closebar" type="button" aria-label="Close favourites" data-favorites-close></button>
+            <button class="favorites-sheet__closebar handle" type="button" aria-label="Close favourites" data-favorites-close></button>
           </div>
         </aside>
 
@@ -497,42 +500,42 @@
 
             <div class="navpage__top-right" aria-label="Top right">
               <div class="navpage__mapswitch" aria-label="Map switch">
-                <button class="navpage__mapbtn" type="button" aria-label="Traffic">
+                <button class="btn btn--secondary btn--round navpage__mapbtn" type="button" aria-label="Traffic" style="--btn-size: 91.4px">
                   <img class="navpage__mapbtn-icon" alt="" src="https://www.figma.com/api/mcp/asset/f7ccb4b3-1a79-48c6-bc30-f458ef257f82" />
                   <span class="navpage__mapbtn-badge" aria-hidden="true">3</span>
                 </button>
-                <button class="navpage__mapbtn" type="button" aria-label="Parking">
+                <button class="btn btn--secondary btn--round navpage__mapbtn" type="button" aria-label="Parking" style="--btn-size: 91.4px">
                   <img class="navpage__mapbtn-icon" alt="" src="https://www.figma.com/api/mcp/asset/1db1aeaf-31c2-4f85-8171-b35cc0c2e23b" />
                 </button>
               </div>
-              <button class="navpage__more" type="button" aria-label="More">
+              <button class="btn btn--secondary btn--round navpage__more" type="button" aria-label="More">
                 <span class="navpage__more-dots" aria-hidden="true">•••</span>
               </button>
             </div>
 
             <div class="navpage__scale" aria-label="Map scale">
-              <button class="navpage__scalebtn" type="button" aria-label="Zoom in">
+              <button class="btn btn--dark btn--round navpage__scalebtn" type="button" aria-label="Zoom in" style="--btn-size: 130px">
                 <img class="navpage__scalebtn-icon" alt="" src="https://www.figma.com/api/mcp/asset/62fa13bb-9c4d-4921-b864-735ee9ff7a77" />
               </button>
-              <button class="navpage__scalebtn" type="button" aria-label="Zoom out">
+              <button class="btn btn--dark btn--round navpage__scalebtn" type="button" aria-label="Zoom out" style="--btn-size: 130px">
                 <img class="navpage__scalebtn-icon" alt="" src="https://www.figma.com/api/mcp/asset/de2fedb6-3267-4374-92bd-fe579ed21f98" />
               </button>
             </div>
 
             <div class="navpage__tools" aria-label="Tools">
-              <button class="navpage__tool" type="button" aria-label="Lightning">⚡</button>
-              <button class="navpage__tool" type="button" aria-label="Direction">➤</button>
-              <button class="navpage__tool" type="button" aria-label="Search">⌕</button>
+              <button class="btn btn--secondary btn--round navpage__tool" type="button" aria-label="Lightning">⚡</button>
+              <button class="btn btn--secondary btn--round navpage__tool" type="button" aria-label="Direction">➤</button>
+              <button class="btn btn--secondary btn--round navpage__tool" type="button" aria-label="Search">⌕</button>
             </div>
 
-            <button class="navpage__compassbtn" type="button" aria-label="Compass">
+            <button class="btn btn--secondary btn--round navpage__compassbtn" type="button" aria-label="Compass">
               <img class="navpage__compass-img" alt="" src="https://www.figma.com/api/mcp/asset/e8ec15ba-2cf3-4472-8446-66fb0acbea63" />
             </button>
 
             <div class="navpage__routewrap" aria-label="Route">
               <div class="navpage__streetpill" aria-label="Street">Парфёновская ул.</div>
               <div class="navpage__route" aria-label="Route bar">
-                <button class="navpage__routebtn" type="button" aria-label="Route mode">
+                <button class="btn btn--soft btn--square navpage__routebtn" type="button" aria-label="Route mode">
                   <img class="navpage__routebtn-icon" alt="" src="https://www.figma.com/api/mcp/asset/aea785f6-d709-4eea-a056-56a9411dd674" />
                 </button>
                 <div class="navpage__route-metrics">
@@ -565,7 +568,7 @@
                     <span class="navpage__route-seg navpage__route-seg--o"></span>
                   </div>
                 </div>
-                <button class="navpage__routebtn" type="button" aria-label="Close route">
+                <button class="btn btn--soft btn--square navpage__routebtn" type="button" aria-label="Close route">
                   <img class="navpage__routebtn-icon" alt="" src="https://www.figma.com/api/mcp/asset/76781b75-ee6f-4fc5-b157-7eb01ddf550d" />
                 </button>
               </div>
@@ -573,6 +576,172 @@
             </div>
 	          </main>
 	        </section>
+
+        <section class="page" data-page="media" hidden aria-label="Media">
+          <main class="media" aria-label="Media player">
+            <div class="media__bg" aria-hidden="true">
+              <img class="media__bg-img" alt="" src="https://www.figma.com/api/mcp/asset/32e23e65-4981-4e9f-a6ed-fd67178c0f14" />
+            </div>
+
+            <div class="media__art" aria-hidden="true">
+              <img class="media__art-img" alt="" src="https://www.figma.com/api/mcp/asset/c1f946b7-46e2-4f53-a7f1-98e43f190a99" />
+            </div>
+
+            <div class="media__source" aria-label="Audio source">
+              <img class="media__source-icon" alt="" src="https://www.figma.com/api/mcp/asset/aa7fcb54-c857-4a0a-a364-41b7608796b9" />
+              <span class="media__source-label">Bluetooth</span>
+              <img class="media__source-caret" alt="" src="https://www.figma.com/api/mcp/asset/62e3a50a-8def-452e-902d-1117399c4007" />
+            </div>
+
+            <div class="media__eq" aria-label="Equalizer">Equalizer</div>
+
+            <div class="media__title" aria-label="Track title">Rush</div>
+            <div class="media__artist" aria-label="Artist">Spicy Velvet</div>
+
+            <div class="media__progress" role="group" aria-label="Track progress">
+              <div class="media__bar" aria-hidden="true">
+                <div class="media__bar-fill"></div>
+                <div class="media__bar-knob"></div>
+              </div>
+              <div class="media__times" aria-label="Time">
+                <span class="media__time">02:30</span>
+                <span class="media__time">07:53</span>
+              </div>
+            </div>
+
+            <div class="media__controls" aria-label="Controls">
+              <button class="btn media__ctrl media__ctrl--wide" type="button" aria-label="Previous">
+                <img class="btn__icon" alt="" src="https://www.figma.com/api/mcp/asset/b8a631fc-657d-4a43-b8b2-34d83437bbd8" />
+              </button>
+              <button class="btn media__ctrl media__ctrl--wide" type="button" aria-label="Pause">
+                <img class="btn__icon" alt="" src="https://www.figma.com/api/mcp/asset/254e9950-8cc0-4b90-aa3f-ca22ffde335c" />
+              </button>
+              <button class="btn media__ctrl media__ctrl--wide" type="button" aria-label="Next">
+                <img class="btn__icon" alt="" src="https://www.figma.com/api/mcp/asset/dfc0492e-a213-4f2c-80e7-64680181b277" />
+              </button>
+              <button class="btn media__ctrl media__ctrl--round" type="button" aria-label="Shuffle">
+                <img class="btn__icon" alt="" src="https://www.figma.com/api/mcp/asset/704ed7ae-2418-4227-b42a-8ec3eef268dd" />
+              </button>
+            </div>
+          </main>
+        </section>
+
+        <section class="page" data-page="climate" hidden aria-label="Climate">
+          <main class="climate-page" aria-label="Climate controls">
+            <div class="climate-page__bg" aria-hidden="true">
+              <div class="climate-page__glow climate-page__glow--one"></div>
+              <div class="climate-page__glow climate-page__glow--two"></div>
+              <div class="climate-page__glow climate-page__glow--three"></div>
+            </div>
+
+            <div class="climate-page__ticks climate-page__ticks--left" aria-hidden="true"></div>
+            <div class="climate-page__ticks climate-page__ticks--right" aria-hidden="true"></div>
+
+            <img class="climate-page__ring" alt="" src="https://www.figma.com/api/mcp/asset/95a519c3-2889-44ae-a1d4-44e88fee4a94" />
+
+            <button class="climate-page__edgebtn climate-page__edgebtn--lt" type="button" aria-label="Increase driver temperature">
+              <img class="climate-page__edgeicon" alt="" src="https://www.figma.com/api/mcp/asset/827f0ad1-8dd2-4431-9f6b-0d82602002d1" />
+            </button>
+            <button class="climate-page__edgebtn climate-page__edgebtn--lb" type="button" aria-label="Decrease driver temperature">
+              <img class="climate-page__edgeicon" alt="" src="https://www.figma.com/api/mcp/asset/ee8a9348-9f99-407a-a93a-ee1eaffa631c" />
+            </button>
+            <button class="climate-page__edgebtn climate-page__edgebtn--rt" type="button" aria-label="Increase passenger temperature">
+              <img class="climate-page__edgeicon" alt="" src="https://www.figma.com/api/mcp/asset/827f0ad1-8dd2-4431-9f6b-0d82602002d1" />
+            </button>
+            <button class="climate-page__edgebtn climate-page__edgebtn--rb" type="button" aria-label="Decrease passenger temperature">
+              <img class="climate-page__edgeicon" alt="" src="https://www.figma.com/api/mcp/asset/ee8a9348-9f99-407a-a93a-ee1eaffa631c" />
+            </button>
+
+            <div class="climate-page__temp climate-page__temp--left">
+              <span class="climate-page__temp-main">27</span>
+              <span class="climate-page__temp-dec">.5</span>
+            </div>
+            <div class="climate-page__unit climate-page__unit--left">°C</div>
+            <div class="climate-page__temp climate-page__temp--right">
+              <span class="climate-page__temp-main">19</span>
+              <span class="climate-page__temp-dec">.5</span>
+            </div>
+            <div class="climate-page__unit climate-page__unit--right">°C</div>
+
+            <div class="climate-page__top-pill" role="group" aria-label="Climate presets">
+              <button class="climate-page__topbtn" type="button" aria-label="Power">
+                <span class="iconbox" aria-hidden="true">
+                  <img class="iconbox__img" alt="" src="https://www.figma.com/api/mcp/asset/77642979-f1a0-4ab4-b191-ad599c9964dd" />
+                </span>
+              </button>
+              <span class="climate-page__divider" aria-hidden="true"></span>
+              <button class="climate-page__topbtn" type="button">AC</button>
+              <span class="climate-page__divider" aria-hidden="true"></span>
+              <button class="climate-page__topbtn" type="button">AUTO</button>
+            </div>
+
+            <div class="climate-page__modes" role="group" aria-label="Airflow modes">
+              <button class="climate-page__modebtn" type="button" aria-label="Face blow">
+                <span class="iconbox" aria-hidden="true">
+                  <img class="iconbox__img" alt="" src="https://www.figma.com/api/mcp/asset/21be1bdc-3ac5-48d6-8347-12438f6567c5" />
+                </span>
+              </button>
+              <button class="climate-page__modebtn" type="button" aria-label="Foot and face blow">
+                <span class="iconbox" aria-hidden="true">
+                  <img class="iconbox__img" alt="" src="https://www.figma.com/api/mcp/asset/715c4ee4-9081-4172-965d-fed3afad32ac" />
+                </span>
+              </button>
+              <button class="climate-page__modebtn" type="button" aria-label="Foot blow">
+                <span class="iconbox" aria-hidden="true">
+                  <img class="iconbox__img" alt="" src="https://www.figma.com/api/mcp/asset/d9b84315-1bcd-47ab-8da1-c87d4262893f" />
+                </span>
+              </button>
+              <button class="climate-page__modebtn" type="button" aria-label="Windshield and foot blow">
+                <span class="iconbox" aria-hidden="true">
+                  <img class="iconbox__img" alt="" src="https://www.figma.com/api/mcp/asset/d52fb016-3b0d-4fbe-aad6-dbf094546e02" />
+                </span>
+              </button>
+              <span class="climate-page__mode-indicator" aria-hidden="true">
+                <img alt="" src="https://www.figma.com/api/mcp/asset/4dd8d843-2568-44c6-b97f-3a882367820a" />
+              </span>
+            </div>
+
+            <div class="climate-page__panels" role="group" aria-label="Air controls">
+              <button class="climate-page__panel climate-page__panel--demist" type="button" aria-label="Demist">
+                <span class="iconbox" aria-hidden="true">
+                  <img class="iconbox__img" alt="" src="https://www.figma.com/api/mcp/asset/b16d7f93-0eb0-4dc8-8532-d70ef7a882c3" />
+                </span>
+                <span class="climate-page__divider" aria-hidden="true"></span>
+                <span class="iconbox" aria-hidden="true">
+                  <img class="iconbox__img" alt="" src="https://www.figma.com/api/mcp/asset/77f4cba5-872a-4f04-9591-8f9fcec42be0" />
+                </span>
+              </button>
+              <button class="climate-page__panel climate-page__panel--sync" type="button" aria-label="Recirculation and sync">
+                <span class="iconbox" aria-hidden="true">
+                  <img class="iconbox__img" alt="" src="https://www.figma.com/api/mcp/asset/2c6d0a47-2225-41e3-ad30-0b616f75eb83" />
+                </span>
+                <span class="climate-page__divider" aria-hidden="true"></span>
+                <span class="climate-page__panel-label">SYNC</span>
+              </button>
+            </div>
+
+            <div class="climate-page__fan" role="group" aria-label="Fan speed">
+              <button class="climate-page__fanbtn" type="button" aria-label="Decrease fan speed">
+                <img class="climate-page__fanicon" alt="" src="https://www.figma.com/api/mcp/asset/da6a60ca-3c75-4207-83ce-de82455ea204" />
+              </button>
+              <div class="climate-page__fan-value">5</div>
+              <button class="climate-page__fanbtn" type="button" aria-label="Increase fan speed">
+                <img class="climate-page__fanicon" alt="" src="https://www.figma.com/api/mcp/asset/de855ce6-29bf-4a2b-a325-ec24932b31a5" />
+              </button>
+            </div>
+
+            <button class="climate-page__seat climate-page__seat--left" type="button" aria-label="Driver seat heat">
+              <span class="iconbox" aria-hidden="true">
+                <img class="iconbox__img" alt="" src="https://www.figma.com/api/mcp/asset/9552cf81-c4cd-492e-862c-5aafe0ff5ec0" />
+              </span>
+            </button>
+            <button class="climate-page__seat climate-page__seat--right" type="button" aria-label="Passenger seat heat">
+              <span class="iconbox" aria-hidden="true">
+                <img class="iconbox__img" alt="" src="https://www.figma.com/api/mcp/asset/285fb04d-e703-4feb-9f6b-d1f74806a606" />
+              </span>
+            </button>
+          </main>
+        </section>
 
         <aside class="volume-panel" hidden aria-label="Volume control" style="--volume: 0.62">
           <div class="volume-panel__slider" data-volume-slider role="slider" aria-label="Volume" aria-valuemin="0" aria-valuemax="100" aria-valuenow="62" tabindex="0">
@@ -590,13 +759,13 @@
         </div>
 
         <div class="bottombar__demists" aria-label="Demists">
-          <button class="bottombar__demistbtn" type="button" aria-pressed="true" data-toggle="toggle" aria-label="Demist front">
+          <button class="bottombar__demistbtn bottombar__btn" type="button" aria-pressed="true" data-toggle="toggle" aria-label="Demist front">
             <span class="iconbox iconbox--demist-front" aria-hidden="true">
               <img class="iconbox__img" alt="" src="https://www.figma.com/api/mcp/asset/cccc967f-c080-4829-b4c9-a221134565c8" />
             </span>
             <span class="bottombar__indicator" aria-hidden="true"></span>
           </button>
-          <button class="bottombar__demistbtn" type="button" aria-pressed="false" data-toggle="toggle" aria-label="Demist back">
+          <button class="bottombar__demistbtn bottombar__btn" type="button" aria-pressed="false" data-toggle="toggle" aria-label="Demist back">
             <span class="iconbox iconbox--demist-back" aria-hidden="true">
               <img class="iconbox__img" alt="" src="https://www.figma.com/api/mcp/asset/45216f91-c758-49aa-9ba7-11950faeefb3" />
             </span>
@@ -606,25 +775,25 @@
 
         <div class="bottombar__nav" aria-label="Navigation bar">
           <div class="bottombar__navgroup bottombar__navgroup--left" aria-label="Left navigation">
-            <button class="navicon" type="button" aria-label="Home" aria-pressed="true" data-nav-to="home">
+            <button class="navicon bottombar__btn" type="button" aria-label="Home" aria-pressed="true" data-nav-to="home">
               <span class="iconbox iconbox--home" aria-hidden="true">
                 <img class="iconbox__img navicon__img--invert" alt="" src="https://www.figma.com/api/mcp/asset/9d0c54d2-0d8c-4f33-82b4-a9b3ea5c7026" />
               </span>
               <span class="navicon__dot" aria-hidden="true"></span>
             </button>
-            <button class="navicon" type="button" aria-label="Apps" aria-pressed="false" data-nav-to="apps">
+            <button class="navicon bottombar__btn" type="button" aria-label="Apps" aria-pressed="false" data-nav-to="apps">
               <span class="iconbox iconbox--nav" aria-hidden="true">
                 <img class="iconbox__img navicon__img--invert" alt="" src="https://www.figma.com/api/mcp/asset/8541df9f-5bd1-4873-8422-e868036d5fdf" />
               </span>
               <span class="navicon__dot" aria-hidden="true"></span>
             </button>
-            <button class="navicon" type="button" aria-label="Settings" aria-pressed="false" data-nav-to="settings">
+            <button class="navicon bottombar__btn" type="button" aria-label="Settings" aria-pressed="false" data-nav-to="settings">
               <span class="iconbox iconbox--nav" aria-hidden="true">
                 <img class="iconbox__img navicon__img--invert" alt="" src="https://www.figma.com/api/mcp/asset/12a8e458-4ea6-4257-a515-bc50c2a6de50" />
               </span>
               <span class="navicon__dot" aria-hidden="true"></span>
             </button>
-            <button class="navicon" type="button" aria-label="Navigator" aria-pressed="false" data-nav-to="navigator">
+            <button class="navicon bottombar__btn" type="button" aria-label="Navigator" aria-pressed="false" data-nav-to="navigator">
               <span class="iconbox iconbox--nav" aria-hidden="true">
                 <img class="iconbox__img navicon__img--invert" alt="" src="https://www.figma.com/api/mcp/asset/c7029a30-9304-4e88-8a34-e34725a631c7" />
               </span>
@@ -633,22 +802,22 @@
           </div>
 
           <div class="bottombar__navgroup bottombar__navgroup--right" aria-label="Right navigation">
-            <button class="navicon" type="button" aria-label="Media" aria-pressed="false" data-segment-item="media">
+            <button class="navicon bottombar__btn" type="button" aria-label="Media" aria-pressed="false" data-nav-to="media">
               <span class="iconbox" aria-hidden="true">
                 <img class="iconbox__img navicon__img--invert" alt="" src="https://www.figma.com/api/mcp/asset/ef87011a-3737-4fe3-9393-977f0bdfdbef" />
               </span>
             </button>
-            <button class="navicon" type="button" aria-label="Climate" aria-pressed="false" data-segment-item="climate">
+            <button class="navicon bottombar__btn" type="button" aria-label="Climate" aria-pressed="false" data-nav-to="climate">
               <span class="iconbox" aria-hidden="true">
                 <img class="iconbox__img navicon__img--invert" alt="" src="https://www.figma.com/api/mcp/asset/e0255f5d-cf50-4cb3-9504-cb1de4b84401" />
               </span>
             </button>
-            <button class="navicon" type="button" aria-label="Phone" aria-pressed="false" data-segment-item="phone">
+            <button class="navicon bottombar__btn" type="button" aria-label="Phone" aria-pressed="false" data-segment-item="phone">
               <span class="iconbox" aria-hidden="true">
                 <img class="iconbox__img navicon__img--invert" alt="" src="https://www.figma.com/api/mcp/asset/49c327c7-485c-49f8-8e5c-02a54df970fc" />
               </span>
             </button>
-            <button class="navicon" type="button" aria-label="360 Camera" aria-pressed="false" data-segment-item="camera">
+            <button class="navicon bottombar__btn" type="button" aria-label="360 Camera" aria-pressed="false" data-segment-item="camera">
               <span class="iconbox" aria-hidden="true">
                 <img class="iconbox__img navicon__img--invert" alt="" src="https://www.figma.com/api/mcp/asset/ad3a395f-c492-42a0-8d0e-cba2431e0b61" />
               </span>
@@ -660,7 +829,7 @@
           <img class="bottombar__va-img" alt="" src="https://www.figma.com/api/mcp/asset/c05c6406-51b8-474c-a916-0e8396aa0f17" />
         </button>
 
-        <button class="bottombar__volume" type="button" aria-label="Volume" aria-pressed="false" data-toggle="toggle">
+        <button class="bottombar__volume bottombar__btn" type="button" aria-label="Volume" aria-pressed="false" data-toggle="toggle">
           <span class="iconbox iconbox--volume" aria-hidden="true">
             <img class="iconbox__img navicon__img--invert" alt="" src="https://www.figma.com/api/mcp/asset/c95ad0e4-4118-4b5f-a6a5-b215943f6b8b" />
           </span>
@@ -672,345 +841,8 @@
       </footer>
     </div>
 
-    <script>
-      (function () {
-        function closestButton(el) {
-          return el && el.closest ? el.closest("button") : null;
-        }
-
-        var driveModes = [
-          {
-            key: "eco",
-            label: "ECO",
-            icon: "https://www.figma.com/api/mcp/asset/efe87e96-3d63-448a-932a-fae931b5b708",
-          },
-          {
-            key: "driving",
-            label: "NORMAL",
-            icon: "https://www.figma.com/api/mcp/asset/3334ed65-b136-44f0-8dc8-261a4bfa07e5",
-          },
-          {
-            key: "energy",
-            label: "ENERGY",
-            icon: "https://www.figma.com/api/mcp/asset/fb61e296-daec-44d3-ac30-5fe772c3b180",
-          },
-        ];
-
-	        var activeDriveIndex = 1;
-          var volumeValue = 0.62;
-          var volumeButton = null;
-          var volumePanel = null;
-          var volumeSlider = null;
-          var volumeHandle = null;
-          var volumeDragOffset = 0;
-          var volumeDragging = false;
-
-	        function setPage(page) {
-	          var pages = document.querySelectorAll(".page[data-page]");
-	          pages.forEach(function (p) {
-	            p.hidden = p.getAttribute("data-page") !== page;
-          });
-
-          var navButtons = document.querySelectorAll("button[data-nav-to]");
-          navButtons.forEach(function (b) {
-            b.setAttribute("aria-pressed", b.getAttribute("data-nav-to") === page ? "true" : "false");
-          });
-        }
-
-	        function updateDriveSelector() {
-	          var selector = document.querySelector("[data-drive-selector]");
-	          if (!selector) return;
-
-          var prev = (activeDriveIndex + driveModes.length - 1) % driveModes.length;
-          var next = (activeDriveIndex + 1) % driveModes.length;
-
-          var btnPrev = selector.querySelector('button[data-drive-action="prev"]');
-          var btnNext = selector.querySelector('button[data-drive-action="next"]');
-          var btnActive = selector.querySelector(".range-selector__active");
-
-          var imgPrev = btnPrev && btnPrev.querySelector("img");
-          var imgNext = btnNext && btnNext.querySelector("img");
-          var imgActive = btnActive && btnActive.querySelector("img");
-          var labelActive = btnActive && btnActive.querySelector(".range-selector__label");
-
-          if (btnPrev) btnPrev.setAttribute("aria-label", driveModes[prev].label);
-          if (btnNext) btnNext.setAttribute("aria-label", driveModes[next].label);
-          if (btnActive) btnActive.setAttribute("aria-label", driveModes[activeDriveIndex].label);
-          if (imgPrev) imgPrev.src = driveModes[prev].icon;
-          if (imgNext) imgNext.src = driveModes[next].icon;
-          if (imgActive) imgActive.src = driveModes[activeDriveIndex].icon;
-	          if (labelActive) labelActive.textContent = driveModes[activeDriveIndex].label;
-	        }
-
-          function clamp(v, min, max) {
-            return Math.min(max, Math.max(min, v));
-          }
-
-          var favSheet = null;
-          var favOpen = false;
-          var favStartY = 0;
-          var favDrag = false;
-          var setTopbarForFavorites = function () {};
-
-          function setFavorites(open) {
-            favOpen = !!open;
-            if (!favSheet) return;
-            favSheet.hidden = false;
-            favSheet.setAttribute("data-open", favOpen ? "true" : "false");
-            favSheet.setAttribute("aria-hidden", favOpen ? "false" : "true");
-            document.documentElement.setAttribute("data-fav-open", favOpen ? "true" : "false");
-            setTopbarForFavorites(favOpen);
-          }
-
-          function syncFavoritesTab(tabKey) {
-            var tabs = document.querySelectorAll("[data-favorites-tab]");
-            tabs.forEach(function (t) {
-              var active = t.getAttribute("data-favorites-tab") === tabKey;
-              t.setAttribute("aria-selected", active ? "true" : "false");
-              t.classList.toggle("favorites-switcher__tab--active", active);
-            });
-
-            var views = document.querySelectorAll("[data-favorites-view]");
-            views.forEach(function (v) {
-              var active = v.getAttribute("data-favorites-view") === tabKey;
-              v.hidden = !active;
-              v.classList.toggle("favorites-view--active", active);
-            });
-
-            var indicator = document.querySelector(".favorites-switcher__active");
-            if (indicator) indicator.style.transform = tabKey === "notifications" ? "translateX(352px)" : "translateX(0)";
-          }
-
-          function syncVolumePanel() {
-            if (!volumeButton || !volumePanel) return;
-            volumePanel.hidden = volumeButton.getAttribute("aria-pressed") !== "true";
-          }
-
-          function renderVolume() {
-            if (!volumePanel || !volumeSlider) return;
-            volumeValue = clamp(volumeValue, 0, 1);
-            volumePanel.style.setProperty("--volume", String(volumeValue));
-            var now = Math.round(volumeValue * 100);
-            volumeSlider.setAttribute("aria-valuenow", String(now));
-
-            if (volumeHandle) {
-              var sliderRect = volumeSlider.getBoundingClientRect();
-              var handleRect = volumeHandle.getBoundingClientRect();
-              var handleHeight = handleRect.height || 620;
-              var topMin = 160;
-              var topMax = sliderRect.height - 16 - handleHeight;
-              var top = topMin + (1 - volumeValue) * (topMax - topMin);
-              volumeHandle.style.top = Math.round(top) + "px";
-            }
-          }
-
-          function setVolumeFromPointer(evt) {
-            if (!volumeSlider) return;
-            var rect = volumeSlider.getBoundingClientRect();
-            var handleHeight = (volumeHandle && volumeHandle.getBoundingClientRect().height) || 620;
-            var topMin = 160;
-            var topMax = rect.height - 16 - handleHeight;
-            var y = evt.clientY - rect.top - volumeDragOffset;
-            var top = clamp(y, topMin, topMax);
-            var ratio = 1 - (top - topMin) / (topMax - topMin);
-            volumeValue = clamp(ratio, 0, 1);
-            renderVolume();
-          }
-
-          function init() {
-	          var activeNav = document.querySelector('button[data-nav-to][aria-pressed="true"]');
-	          if (activeNav) setPage(activeNav.getAttribute("data-nav-to"));
-	          updateDriveSelector();
-
-            var topbarTimeEl = document.querySelector(".topbar__time");
-            var topbarDateEl = document.querySelector(".topbar__date");
-            var topbarTimeDefault = topbarTimeEl ? topbarTimeEl.textContent : "";
-            var topbarDateDefault = topbarDateEl ? topbarDateEl.textContent : "";
-            setTopbarForFavorites = function (open) {
-              if (!topbarTimeEl || !topbarDateEl) return;
-              if (open) {
-                topbarTimeEl.textContent = "20:26";
-                topbarDateEl.textContent = "Fr, 13 November";
-              } else {
-                topbarTimeEl.textContent = topbarTimeDefault;
-                topbarDateEl.textContent = topbarDateDefault;
-              }
-            };
-
-            var topbar = document.querySelector(".topbar");
-            var topbarHandle = document.querySelector(".topbar__handle");
-            if (topbar) {
-              topbar.addEventListener("click", function () {
-                setFavorites(!favOpen);
-              });
-            }
-            if (topbarHandle) {
-              topbarHandle.addEventListener("click", function (evt) {
-                evt.stopPropagation();
-                setFavorites(!favOpen);
-              });
-            }
-
-            favSheet = document.querySelector("[data-favorites-sheet]");
-            setFavorites(false);
-            setTopbarForFavorites(false);
-
-            volumeButton = document.querySelector(".bottombar__volume");
-            volumePanel = document.querySelector(".volume-panel");
-            volumeSlider = document.querySelector("[data-volume-slider]");
-            volumeHandle = document.querySelector("[data-volume-handle]");
-            syncVolumePanel();
-            renderVolume();
-
-            if (volumeHandle) {
-              volumeHandle.addEventListener("pointerdown", function (evt) {
-                volumeDragging = true;
-                var rect = volumeHandle.getBoundingClientRect();
-                volumeDragOffset = evt.clientY - rect.top;
-                setVolumeFromPointer(evt);
-                volumeHandle.setPointerCapture && volumeHandle.setPointerCapture(evt.pointerId);
-              });
-              volumeHandle.addEventListener("pointermove", function (evt) {
-                if (!volumeDragging) return;
-                setVolumeFromPointer(evt);
-              });
-              volumeHandle.addEventListener("pointerup", function () {
-                volumeDragging = false;
-              });
-              volumeHandle.addEventListener("pointercancel", function () {
-                volumeDragging = false;
-              });
-            }
-
-            if (volumeSlider) {
-              volumeSlider.addEventListener("pointerdown", function (evt) {
-                if (evt.target && evt.target.closest && evt.target.closest("[data-volume-handle]")) return;
-                volumeDragOffset = 0;
-                setVolumeFromPointer(evt);
-                volumeSlider.setPointerCapture && volumeSlider.setPointerCapture(evt.pointerId);
-              });
-              volumeSlider.addEventListener("pointermove", function (evt) {
-                if (evt.buttons && !(evt.target && evt.target.closest && evt.target.closest("[data-volume-handle]"))) setVolumeFromPointer(evt);
-              });
-              volumeSlider.addEventListener("keydown", function (evt) {
-                if (evt.key === "ArrowUp" || evt.key === "ArrowRight") {
-                  volumeValue = clamp(volumeValue + 0.05, 0, 1);
-                  renderVolume();
-                  evt.preventDefault();
-                }
-                if (evt.key === "ArrowDown" || evt.key === "ArrowLeft") {
-                  volumeValue = clamp(volumeValue - 0.05, 0, 1);
-                  renderVolume();
-                  evt.preventDefault();
-                }
-              });
-            }
-
-	          var widgets = document.querySelector(".widgets");
-	          if (widgets) {
-	            widgets.addEventListener(
-              "wheel",
-              function (evt) {
-                if (Math.abs(evt.deltaY) > Math.abs(evt.deltaX)) {
-                  widgets.scrollLeft += evt.deltaY;
-                  evt.preventDefault();
-                }
-              },
-              { passive: false }
-            );
-          }
-        }
-
-        document.addEventListener("click", function (e) {
-          var btn = closestButton(e.target);
-          if (!btn) return;
-
-          if (btn.hasAttribute && btn.hasAttribute("data-favorites-close")) {
-            setFavorites(false);
-            return;
-          }
-
-          var favTab = btn.getAttribute("data-favorites-tab");
-          if (favTab) {
-            syncFavoritesTab(favTab);
-            var activeKey = favTab;
-            var indicator = document.querySelector(".favorites-switcher__active");
-            if (indicator) indicator.style.transform = activeKey === "notifications" ? "translateX(352px)" : "translateX(0)";
-            return;
-          }
-
-          if (btn.classList && btn.classList.contains("settings-menu__item")) {
-            var groupCol = btn.closest("[data-settings-group]");
-            if (groupCol) {
-              var items = groupCol.querySelectorAll(".settings-menu__item");
-              items.forEach(function (it) {
-                it.setAttribute("aria-pressed", it === btn ? "true" : "false");
-              });
-            }
-            return;
-          }
-
-          var navTo = btn.getAttribute("data-nav-to");
-          if (navTo) {
-            setPage(navTo);
-            return;
-          }
-
-          var driveAction = btn.getAttribute("data-drive-action");
-          if (driveAction === "prev") {
-            activeDriveIndex = (activeDriveIndex + driveModes.length - 1) % driveModes.length;
-            updateDriveSelector();
-            return;
-          }
-          if (driveAction === "next") {
-            activeDriveIndex = (activeDriveIndex + 1) % driveModes.length;
-            updateDriveSelector();
-            return;
-          }
-
-          var toggle = btn.getAttribute("data-toggle");
-	          if (toggle === "toggle") {
-	            var pressed = btn.getAttribute("aria-pressed") === "true";
-	            btn.setAttribute("aria-pressed", String(!pressed));
-              if (btn.classList && btn.classList.contains("bottombar__volume")) {
-                syncVolumePanel();
-              }
-	          }
-	        });
-
-        document.addEventListener("pointerdown", function (e) {
-          var target = e.target;
-          if (!target) return;
-
-          var handle = target.closest && target.closest(".topbar__handle, [data-favorites-close]");
-          if (!handle) return;
-          favDrag = true;
-          favStartY = e.clientY;
-        });
-
-        document.addEventListener("pointermove", function (e) {
-          if (!favDrag) return;
-          var dy = e.clientY - favStartY;
-          if (!favOpen && dy > 40) {
-            setFavorites(true);
-            favDrag = false;
-          }
-          if (favOpen && dy < -40) {
-            setFavorites(false);
-            favDrag = false;
-          }
-        });
-
-        document.addEventListener("pointerup", function () {
-          favDrag = false;
-        });
-
-        document.addEventListener("keydown", function (e) {
-          if (e.key === "Escape") setFavorites(false);
-        });
-
-        init();
-      })();
-    </script>
+    <script src="./features/favorites.js"></script>
+    <script src="./features/volume.js"></script>
+    <script src="./app.js"></script>
   </body>
 </html>
