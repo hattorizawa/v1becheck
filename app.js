@@ -23,6 +23,22 @@
 
   var activeDriveIndex = 1;
   var volume = null;
+  var notifyTimer = null;
+
+  function showNotification(title, text) {
+    var note = document.querySelector("[data-notification]");
+    if (!note) return;
+    var titleEl = note.querySelector(".notification__title");
+    var textEl = note.querySelector(".notification__text");
+    if (titleEl) titleEl.textContent = title || "Title";
+    if (textEl) textEl.textContent = text || "Text";
+
+    note.hidden = false;
+    if (notifyTimer) window.clearTimeout(notifyTimer);
+    notifyTimer = window.setTimeout(function () {
+      note.hidden = true;
+    }, 2200);
+  }
 
   function setPage(page) {
     var pages = document.querySelectorAll(".page[data-page]");
@@ -129,6 +145,10 @@
       btn.setAttribute("aria-pressed", String(!pressed));
       if (btn.classList && btn.classList.contains("bottombar__volume")) {
         volume && volume.syncPanel && volume.syncPanel();
+      }
+      if (btn.hasAttribute("data-notify")) {
+        var label = btn.getAttribute("aria-label") || btn.textContent || "Action";
+        showNotification(label.trim(), "Updated");
       }
     }
   });

@@ -1,4 +1,7 @@
 :root {
+  --font-family-main: "Atom Interphases", sans-serif;
+  --font-feature-main: "ss05" 1, "lnum" 1, "tnum" 1;
+
   --icon-size: 50px;
   --icon-box: 48px;
   --icon-inner: 40px;
@@ -22,27 +25,13 @@
   --active-pill: #b8e1fb;
   --active-pill-border: #aed7f2;
   --text: #243946;
-  --text-ink: #000000;
   --text-ui: #375b71;
   --text-muted-ui: #4f6470;
-  --text-muted: rgba(4, 33, 50, 0.7);
   --text-soft: rgba(4, 33, 50, 0.4);
   --accent-blue: #0080ff;
   --accent-blue-strong: #0062ff;
   --warning: #ffa827;
-  --cool: #31c8ff;
 
-  --s-4: 4px;
-  --s-8: 8px;
-  --s-12: 12px;
-  --s-16: 16px;
-  --s-20: 20px;
-  --s-24: 24px;
-  --s-32: 32px;
-  --s-40: 40px;
-  --s-48: 48px;
-
-  --radius-lg: 60px;
   --radius-md: 50px;
   --radius-pill: 999px;
   --shadow-elev: 0 12px 28px rgba(0, 0, 0, 0.22);
@@ -50,12 +39,71 @@
   --shadow-strong: 0 14px 34px rgba(0, 0, 0, 0.28);
 
   --duration-fast: 180ms;
-  --duration-mid: 240ms;
 
   --z-page: 1;
   --z-topbar: 20;
   --z-favorites: 11;
-  --z-volume: 12;
 
-  font-feature-settings: "ss05" 1, "lnum" 1, "tnum" 1;
+  --type-headline-xl-size: 108px;
+  --type-headline-xl-line: 130px;
+  --type-headline-xl-weight: 400;
+  --type-headline-xl-tracking: 0;
+
+  --type-headline-l-size: 72px;
+  --type-headline-l-line: 72px;
+  --type-headline-l-weight: 400;
+  --type-headline-l-tracking: 0;
+
+  --type-headline-m-size: 44px;
+  --type-headline-m-line: 52px;
+  --type-headline-m-weight: 500;
+  --type-headline-m-tracking: 0;
+
+  --type-base-l-size: 32px;
+  --type-base-l-line: 40px;
+  --type-base-l-weight: 400;
+  --type-base-l-tracking: 0;
+
+  --type-base-m-size: 28px;
+  --type-base-m-line: 32px;
+  --type-base-m-weight: 500;
+  --type-base-m-tracking: 0;
+
+  --type-base-s-size: 24px;
+  --type-base-s-line: 32px;
+  --type-base-s-weight: 500;
+  --type-base-s-tracking: 0.02em;
+
+  --type-button-l-size: 44px;
+  --type-button-l-line: 80px;
+  --type-button-l-weight: 500;
+  --type-button-l-tracking: 0;
+
+  --type-button-m-size: 28px;
+  --type-button-m-line: 48px;
+  --type-button-m-weight: 500;
+  --type-button-m-tracking: 0;
+
+  --type-temperature-size: 40px;
+  --type-temperature-line: 40px;
+  --type-temperature-weight: 500;
+  --type-temperature-tracking: 0;
+
+  --type-cluster-xl-size: 140px;
+  --type-cluster-xl-line: 124px;
+  --type-cluster-xl-weight: 400;
+  --type-cluster-xl-tracking: -0.02em;
+
+  --type-cluster-l-size: 40px;
+  --type-cluster-l-line: 56px;
+  --type-cluster-l-weight: 500;
+  --type-cluster-l-tracking: 0.02em;
+
+  --type-cluster-m-size: 28px;
+  --type-cluster-m-line: 36px;
+  --type-cluster-m-weight: 400;
+  --type-cluster-m-tracking: 0.02em;
+
+  font-family: var(--font-family-main);
+  font-feature-settings: var(--font-feature-main);
 }

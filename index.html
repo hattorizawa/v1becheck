@@ -46,6 +46,16 @@
           </div>
         </header>
 
+        <div class="notification notification--toast" data-notification hidden>
+          <div class="notification__icon" aria-hidden="true">
+            <img class="notification__icon-img" alt="" src="https://www.figma.com/api/mcp/asset/473db7f4-53bc-4233-8478-7573232cc93f" />
+          </div>
+          <div class="notification__content">
+            <div class="notification__title">Title</div>
+            <div class="notification__text">Text</div>
+          </div>
+        </div>
+
         <section class="page" data-page="home" aria-label="Home">
           <main class="widgets" data-node-id="1:822" aria-label="Widgets">
           <section class="card nav-card" data-node-id="1:823" aria-label="Navigation">
@@ -99,13 +109,13 @@
               </div>
 
 	              <div class="climate__modes" data-node-id="1:893" aria-label="Climate modes">
-	                <button class="mode" data-toggle="toggle" aria-pressed="true" data-node-id="1:894" type="button">AUTO</button>
-	                <button class="mode" data-toggle="toggle" aria-pressed="true" data-node-id="1:896" type="button">AC</button>
-	                <button class="mode" data-toggle="toggle" aria-pressed="false" data-node-id="1:898" type="button" aria-label="Air recirculation">
-	                  <span class="iconbox iconbox--recirc" aria-hidden="true">
-	                    <img class="iconbox__img" data-node-id="1:899" alt="" src="https://www.figma.com/api/mcp/asset/291c7ecb-58ea-4be4-a7ae-96260adf6b32" />
-	                  </span>
-	                </button>
+                <button class="mode" data-toggle="toggle" data-notify="true" aria-pressed="true" data-node-id="1:894" type="button">AUTO</button>
+                <button class="mode" data-toggle="toggle" data-notify="true" aria-pressed="true" data-node-id="1:896" type="button">AC</button>
+                <button class="mode" data-toggle="toggle" data-notify="true" aria-pressed="false" data-node-id="1:898" type="button" aria-label="Air recirculation">
+                  <span class="iconbox iconbox--recirc" aria-hidden="true">
+                    <img class="iconbox__img" data-node-id="1:899" alt="" src="https://www.figma.com/api/mcp/asset/291c7ecb-58ea-4be4-a7ae-96260adf6b32" />
+                  </span>
+                </button>
 	              </div>
             </section>
 
@@ -153,17 +163,17 @@
 
             <section class="card quick-card" data-node-id="1:934" aria-label="Quick controls">
               <div class="quick__row" data-node-id="1:935">
-                <button class="quick__btn" data-toggle="toggle" aria-pressed="false" data-node-id="1:936" type="button" aria-label="Folding mirrors">
+                <button class="quick__btn pill-toggle" data-toggle="toggle" data-notify="true" aria-pressed="false" data-node-id="1:936" type="button" aria-label="Folding mirrors">
                   <span class="iconbox iconbox--folding-mirrors" aria-hidden="true">
                     <img class="iconbox__img" data-node-id="1:937" alt="" src="https://www.figma.com/api/mcp/asset/751a3ddb-fcbd-43f0-8464-457ef7e8b35a" />
                   </span>
                 </button>
-                <button class="quick__btn" data-toggle="toggle" aria-pressed="true" data-node-id="1:938" type="button" aria-label="Lock">
+                <button class="quick__btn pill-toggle" data-toggle="toggle" data-notify="true" aria-pressed="true" data-node-id="1:938" type="button" aria-label="Lock">
                   <span class="iconbox" aria-hidden="true">
                     <img class="iconbox__img" data-node-id="1:939" alt="" src="https://www.figma.com/api/mcp/asset/c216f320-1b76-4b6e-9980-170fc9d2fafd" />
                   </span>
                 </button>
-                <button class="quick__btn" data-toggle="toggle" aria-pressed="false" data-node-id="1:940" type="button" aria-label="Trunk">
+                <button class="quick__btn pill-toggle" data-toggle="toggle" data-notify="true" aria-pressed="false" data-node-id="1:940" type="button" aria-label="Trunk">
                   <span class="iconbox" aria-hidden="true">
                     <img class="iconbox__img" data-node-id="1:941" alt="" src="https://www.figma.com/api/mcp/asset/efdd195c-ffb7-46e0-94ba-cd90f7a76726" />
                   </span>
@@ -414,63 +424,109 @@
           <div class="favorites-sheet__panel" role="dialog" aria-modal="false" aria-label="Favorites panel">
             <div class="tabs favorites-tabs" role="tablist" aria-label="Favorites tabs">
               <span class="tabs__indicator" aria-hidden="true"></span>
-              <button class="btn btn--secondary btn--md btn--pill favorites-tab" type="button" role="tab" aria-selected="true" data-favorites-tab="favorites">
-                <img class="btn__icon" alt="" src="https://www.figma.com/api/mcp/asset/dabac438-c302-4865-997e-8e51dde4435d" />
-                <span>Favourites</span>
+              <button class="favorites-tab" type="button" role="tab" aria-selected="true" data-favorites-tab="favorites">
+                <img class="favorites-tab__icon" alt="" src="https://www.figma.com/api/mcp/asset/dabac438-c302-4865-997e-8e51dde4435d" />
+                <span>Favorites</span>
               </button>
-              <button class="btn btn--secondary btn--md btn--pill favorites-tab" type="button" role="tab" aria-selected="false" data-favorites-tab="notifications">
-                <img class="btn__icon" alt="" src="https://www.figma.com/api/mcp/asset/fcf59c91-2fe3-495c-97ce-cc57e305f6b6" />
+              <button class="favorites-tab" type="button" role="tab" aria-selected="false" data-favorites-tab="notifications">
+                <img class="favorites-tab__icon" alt="" src="https://www.figma.com/api/mcp/asset/fcf59c91-2fe3-495c-97ce-cc57e305f6b6" />
                 <span>Notifications</span>
               </button>
             </div>
 
             <div class="favorites-view favorites-view--active" data-favorites-view="favorites" role="tabpanel" aria-label="Favourites">
-              <button class="btn btn--primary btn--lg fav-btn fav-btn--wide" type="button" style="left: 320px; top: 240px">
-                <img class="fav-btn__icon fav-btn__icon--eco" alt="" src="https://www.figma.com/api/mcp/asset/c427182f-a8bc-4d46-a2b0-907c10fc0bca" />
-                <span class="fav-btn__label">Eco mode</span>
-              </button>
+              <div class="fav-grid" aria-label="Favourite controls">
+                <button class="fav-tile fav-tile--wide fav-grid__eco is-on" type="button" aria-pressed="true" aria-label="Eco mode">
+                  <img class="fav-tile__icon" alt="" src="https://www.figma.com/api/mcp/asset/c427182f-a8bc-4d46-a2b0-907c10fc0bca" />
+                  <span class="fav-tile__label">Eco mode</span>
+                </button>
 
-              <div class="fav-slider fav-slider--active" aria-label="Slider" style="left: 752px; top: 240px">
-                <div class="fav-slider__track" aria-hidden="true"></div>
-                <img class="fav-slider__icon" alt="" src="https://www.figma.com/api/mcp/asset/1e3dd3e3-b187-41dd-ac14-370003fde90b" />
+                <div class="fav-slider-card fav-slider-card--brightness fav-grid__brightness" data-fav-slider data-slider-id="brightness" data-min-fill="0.2" data-value="0.72" role="slider" aria-label="Brightness" aria-valuemin="20" aria-valuemax="100" aria-valuenow="72" tabindex="0">
+                  <div class="fav-slider-card__fill" aria-hidden="true"></div>
+                  <img class="fav-slider-card__icon" alt="" src="https://www.figma.com/api/mcp/asset/1e3dd3e3-b187-41dd-ac14-370003fde90b" />
+                </div>
+
+                <div class="fav-slider-card fav-slider-card--volume fav-grid__volume" data-fav-slider data-slider-id="volume" data-min-fill="0" data-value="0" role="slider" aria-label="Volume" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
+                  <div class="fav-slider-card__fill" aria-hidden="true"></div>
+                  <img class="fav-slider-card__icon" alt="" src="https://www.figma.com/api/mcp/asset/1c5d9fa6-edb5-4d0e-95f9-c37331f0c4ce" />
+                </div>
+
+                <button class="fav-tile fav-tile--wide fav-grid__wifi" type="button" aria-pressed="false" aria-label="Wi-fi">
+                  <img class="fav-tile__icon" alt="" src="https://www.figma.com/api/mcp/asset/f28895e4-dead-4cdb-b833-2cb9d136c00b" />
+                  <span class="fav-tile__label">Wi-fi</span>
+                </button>
+
+                <button class="fav-tile fav-tile--wide fav-grid__oneplus is-on" type="button" aria-pressed="true" aria-label="One Plus">
+                  <img class="fav-tile__icon" alt="" src="https://www.figma.com/api/mcp/asset/6b1a3626-c905-4c45-a446-452d75de9e4a" />
+                  <span class="fav-tile__label">One Plus</span>
+                </button>
+
+                <button class="fav-tile fav-grid__seat" type="button" aria-pressed="false" aria-label="Seat position">
+                  <img class="fav-tile__icon" alt="" src="https://www.figma.com/api/mcp/asset/4e3a3a9e-420b-416e-a26a-744dc18cf3ca" />
+                </button>
+                <button class="fav-tile fav-grid__autohold is-on" type="button" aria-pressed="true" aria-label="Auto hold">
+                  <img class="fav-tile__icon" alt="" src="https://www.figma.com/api/mcp/asset/a80b5a4e-9649-4501-b26d-4939f36c3dfd" />
+                </button>
+                <button class="fav-tile fav-grid__lock" type="button" aria-pressed="false" aria-label="Lock">
+                  <img class="fav-tile__icon" alt="" src="https://www.figma.com/api/mcp/asset/758765f6-2efa-4d3e-91cc-1996d6ade8da" />
+                </button>
+                <button class="fav-tile fav-grid__trunk" type="button" aria-pressed="false" aria-label="Trunk">
+                  <img class="fav-tile__icon" alt="" src="https://www.figma.com/api/mcp/asset/88d209ec-42c2-4b86-9770-24419814fe41" />
+                </button>
+                <button class="fav-tile fav-grid__moon" type="button" aria-pressed="false" aria-label="Moon">
+                  <img class="fav-tile__icon" alt="" src="https://www.figma.com/api/mcp/asset/86450e0e-d48b-439a-bc17-11a518851fbc" />
+                </button>
+                <button class="fav-tile fav-grid__mute is-on" type="button" aria-pressed="true" aria-label="Mute">
+                  <img class="fav-tile__icon" alt="" src="https://www.figma.com/api/mcp/asset/bff251c5-adf9-4cb3-82fc-57525b655af8" />
+                </button>
               </div>
-
-              <div class="fav-slider" aria-label="Slider" style="left: 968px; top: 240px">
-                <img class="fav-slider__icon" alt="" src="https://www.figma.com/api/mcp/asset/1c5d9fa6-edb5-4d0e-95f9-c37331f0c4ce" />
-              </div>
-
-              <button class="btn btn--secondary btn--lg fav-btn fav-btn--wide" type="button" style="left: 1184px; top: 240px">
-                <img class="fav-btn__icon" alt="" src="https://www.figma.com/api/mcp/asset/f28895e4-dead-4cdb-b833-2cb9d136c00b" />
-                <span class="fav-btn__label">Wi-fi</span>
-              </button>
-
-              <button class="btn btn--primary btn--lg fav-btn fav-btn--wide" type="button" style="left: 1184px; top: 456px">
-                <img class="fav-btn__icon" alt="" src="https://www.figma.com/api/mcp/asset/6b1a3626-c905-4c45-a446-452d75de9e4a" />
-                <span class="fav-btn__label">One Plus</span>
-              </button>
-
-              <button class="btn btn--secondary btn--md fav-btn" type="button" aria-label="Trunk" style="left: 320px; top: 456px">
-                <img class="fav-btn__icon" alt="" src="https://www.figma.com/api/mcp/asset/4e3a3a9e-420b-416e-a26a-744dc18cf3ca" />
-              </button>
-              <button class="btn btn--primary btn--md fav-btn" type="button" aria-label="Auto hold" style="left: 536px; top: 456px">
-                <img class="fav-btn__icon" alt="" src="https://www.figma.com/api/mcp/asset/a80b5a4e-9649-4501-b26d-4939f36c3dfd" />
-              </button>
-              <button class="btn btn--secondary btn--md fav-btn" type="button" aria-label="Lock" style="left: 320px; top: 672px">
-                <img class="fav-btn__icon" alt="" src="https://www.figma.com/api/mcp/asset/758765f6-2efa-4d3e-91cc-1996d6ade8da" />
-              </button>
-              <button class="btn btn--secondary btn--md fav-btn" type="button" aria-label="Mirror tilt" style="left: 536px; top: 672px">
-                <img class="fav-btn__icon" alt="" src="https://www.figma.com/api/mcp/asset/88d209ec-42c2-4b86-9770-24419814fe41" />
-              </button>
-              <button class="btn btn--secondary btn--md fav-btn" type="button" aria-label="Moon" style="left: 1184px; top: 672px">
-                <img class="fav-btn__icon" alt="" src="https://www.figma.com/api/mcp/asset/86450e0e-d48b-439a-bc17-11a518851fbc" />
-              </button>
-              <button class="btn btn--primary btn--md fav-btn" type="button" aria-label="Mute" style="left: 1400px; top: 672px">
-                <img class="fav-btn__icon" alt="" src="https://www.figma.com/api/mcp/asset/bff251c5-adf9-4cb3-82fc-57525b655af8" />
-              </button>
             </div>
 
-            <div class="favorites-view" data-favorites-view="notifications" role="tabpanel" aria-label="Notifications" hidden>
-              <div class="favorites-empty">Notifications (coming soon)</div>
+            <div class="favorites-view favorites-notifications" data-favorites-view="notifications" role="tabpanel" aria-label="Notifications" hidden>
+              <button class="favorites-notifications__clear icon-action-btn icon-action-btn--light" type="button" aria-label="Clear notifications" data-favorites-clear>
+                <span class="iconbox" aria-hidden="true">
+                  <img class="iconbox__img" alt="" src="https://www.figma.com/api/mcp/asset/ebb65c14-fa86-41bc-8182-c2efdde51801" />
+                </span>
+              </button>
+
+              <div class="favorites-notifications__list" data-favorites-list>
+                <article class="notification notification--cell">
+                  <div class="notification__icon notification__icon--alert" aria-hidden="true">
+                    <img class="notification__icon-img notification__icon-img--white" alt="" src="https://www.figma.com/api/mcp/asset/c427182f-a8bc-4d46-a2b0-907c10fc0bca" />
+                  </div>
+                  <div class="notification__content">
+                    <div class="notification__title">Eco mode</div>
+                    <div class="notification__text">Responsiveness during maneuvers is reduced</div>
+                  </div>
+                  <div class="notification__time">1 hour ago</div>
+                </article>
+
+                <article class="notification notification--cell">
+                  <div class="notification__icon notification__icon--warning" aria-hidden="true">
+                    <div class="notification__icon-text">ABS</div>
+                  </div>
+                  <div class="notification__content">
+                    <div class="notification__title">ABS system malfunction</div>
+                    <div class="notification__text">Braking distance increased. Please visit service</div>
+                  </div>
+                  <div class="notification__time">14:00</div>
+                </article>
+
+                <article class="notification notification--cell">
+                  <div class="notification__icon notification__icon--dark" aria-hidden="true">
+                    <div class="notification__icon-text">✦</div>
+                  </div>
+                  <div class="notification__content">
+                    <div class="notification__title">System update available</div>
+                    <div class="notification__text">Version 1.2.4</div>
+                  </div>
+                  <div class="notification__time">13:00</div>
+                </article>
+              </div>
+
+              <div class="favorites-notifications__empty" data-favorites-empty hidden>
+                <div class="favorites-notifications__empty-text">No Notification</div>
+              </div>
             </div>
 
             <button class="favorites-sheet__closebar handle" type="button" aria-label="Close favourites" data-favorites-close></button>
@@ -744,7 +800,45 @@
         </section>
 
         <section class="page" data-page="phone" hidden aria-label="Phone">
-          <main class="placeholder" aria-label="Phone placeholder"></main>
+          <main class="calls-page" aria-label="Active call">
+            <div class="calls-page__bg" aria-hidden="true">
+              <div class="calls-page__shape calls-page__shape--left"></div>
+              <div class="calls-page__shape calls-page__shape--right"></div>
+            </div>
+
+            <button class="calls-page__collapse icon-action-btn icon-action-btn--light" type="button" aria-label="Collapse call">
+              <span class="iconbox" aria-hidden="true">
+                <img class="iconbox__img" alt="" src="https://www.figma.com/api/mcp/asset/6541ea3d-4588-40d0-8d2c-5ec31c533150" />
+              </span>
+            </button>
+
+            <div class="calls-page__content">
+              <div class="calls-page__avatar" aria-hidden="true">
+                <img class="calls-page__avatar-img" alt="" src="https://www.figma.com/api/mcp/asset/f8400bf4-c88c-4426-8478-7d0cad930714" />
+              </div>
+              <div class="calls-page__title">Vladimir</div>
+              <div class="calls-page__time">00:00:36</div>
+            </div>
+
+            <div class="calls-page__actions" role="group" aria-label="Call controls">
+              <button class="calls-page__end" type="button">End call</button>
+              <button class="calls-page__action icon-action-btn icon-action-btn--soft" type="button" aria-label="Mute">
+                <span class="iconbox" aria-hidden="true">
+                  <img class="iconbox__img" alt="" src="https://www.figma.com/api/mcp/asset/c21672b3-910b-4f5c-bed3-f81a8276b72e" />
+                </span>
+              </button>
+              <button class="calls-page__action icon-action-btn icon-action-btn--soft" type="button" aria-label="Swap call">
+                <span class="iconbox" aria-hidden="true">
+                  <img class="iconbox__img" alt="" src="https://www.figma.com/api/mcp/asset/4a7ed657-776e-4e63-b50f-7e6c02c5931b" />
+                </span>
+              </button>
+              <button class="calls-page__action icon-action-btn icon-action-btn--soft" type="button" aria-label="Dialpad">
+                <span class="iconbox" aria-hidden="true">
+                  <img class="iconbox__img" alt="" src="https://www.figma.com/api/mcp/asset/8f919db1-55ec-4f66-b824-7e0e69bb8831" />
+                </span>
+              </button>
+            </div>
+          </main>
         </section>
 
         <section class="page" data-page="camera" hidden aria-label="360 camera">
