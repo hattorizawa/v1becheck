@@ -10,13 +10,13 @@
       icon: "https://www.figma.com/api/mcp/asset/efe87e96-3d63-448a-932a-fae931b5b708",
     },
     {
-      key: "driving",
+      key: "normal",
       label: "NORMAL",
       icon: "https://www.figma.com/api/mcp/asset/3334ed65-b136-44f0-8dc8-261a4bfa07e5",
     },
     {
-      key: "energy",
-      label: "ENERGY",
+      key: "sport",
+      label: "SPORT",
       icon: "https://www.figma.com/api/mcp/asset/fb61e296-daec-44d3-ac30-5fe772c3b180",
     },
   ];
@@ -56,25 +56,20 @@
     var selector = document.querySelector("[data-drive-selector]");
     if (!selector) return;
 
-    var prev = (activeDriveIndex + driveModes.length - 1) % driveModes.length;
-    var next = (activeDriveIndex + 1) % driveModes.length;
+    var items = selector.querySelectorAll("[data-drive-mode]");
+    items.forEach(function (item, index) {
+      var mode = driveModes[index];
+      var isActive = index === activeDriveIndex;
+      var img = item.querySelector("img");
+      var label = item.querySelector(".range-selector__label");
 
-    var btnPrev = selector.querySelector('button[data-drive-action="prev"]');
-    var btnNext = selector.querySelector('button[data-drive-action="next"]');
-    var btnActive = selector.querySelector(".range-selector__active");
-
-    var imgPrev = btnPrev && btnPrev.querySelector("img");
-    var imgNext = btnNext && btnNext.querySelector("img");
-    var imgActive = btnActive && btnActive.querySelector("img");
-    var labelActive = btnActive && btnActive.querySelector(".range-selector__label");
-
-    if (btnPrev) btnPrev.setAttribute("aria-label", driveModes[prev].label);
-    if (btnNext) btnNext.setAttribute("aria-label", driveModes[next].label);
-    if (btnActive) btnActive.setAttribute("aria-label", driveModes[activeDriveIndex].label);
-    if (imgPrev) imgPrev.src = driveModes[prev].icon;
-    if (imgNext) imgNext.src = driveModes[next].icon;
-    if (imgActive) imgActive.src = driveModes[activeDriveIndex].icon;
-    if (labelActive) labelActive.textContent = driveModes[activeDriveIndex].label;
+      item.classList.toggle("is-active", isActive);
+      item.setAttribute("aria-pressed", isActive ? "true" : "false");
+      item.setAttribute("aria-label", mode.label);
+      item.setAttribute("data-drive-mode", mode.key);
+      if (img) img.src = mode.icon;
+      if (label) label.textContent = mode.label;
+    });
   }
 
   function initWidgetsWheel() {
@@ -127,14 +122,13 @@
       return;
     }
 
-    var driveAction = btn.getAttribute("data-drive-action");
-    if (driveAction === "prev") {
-      activeDriveIndex = (activeDriveIndex + driveModes.length - 1) % driveModes.length;
-      updateDriveSelector();
-      return;
-    }
-    if (driveAction === "next") {
-      activeDriveIndex = (activeDriveIndex + 1) % driveModes.length;
+    var driveMode = btn.getAttribute("data-drive-mode");
+    if (driveMode) {
+      var nextIndex = driveModes.findIndex(function (mode) {
+        return mode.key === driveMode;
+      });
+      if (nextIndex === -1) return;
+      activeDriveIndex = nextIndex;
       updateDriveSelector();
       return;
     }

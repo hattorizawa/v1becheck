@@ -35,8 +35,8 @@
         subtitle: "Skai isyourgod",
       },
       fm: {
-        icon: "https://www.figma.com/api/mcp/asset/26a3f890-bf8c-4a15-a9b7-f972e7269d3b",
-        cover: "https://www.figma.com/api/mcp/asset/1c0b4175-382e-47f8-884c-80e42af7dd10",
+        icon: "https://www.figma.com/api/mcp/asset/d39114f3-205f-4761-8a6a-4eae6638f6a7",
+        cover: "https://www.figma.com/api/mcp/asset/d2edf7aa-6d85-4d59-9696-b6857f0ae433",
         title: "Rock Radio",
         subtitle: "95.20 FM",
       },

@@ -1341,33 +1341,71 @@ html[data-fav-open="true"] .topbar .iconbox__img {
 .range-selector {
   width: 100%;
   height: 90px;
-  display: grid;
-  grid-template-columns: 1fr 1.6fr 1fr;
+  display: flex;
   align-items: center;
+  gap: 8px;
+  padding: 0;
 }
 
-.range-selector__side {
+.range-selector__item {
+  flex: 1 0 0;
   height: 90px;
   border-radius: 50px;
-  display: grid;
-  place-items: center;
-  background: transparent;
-  border: none;
-}
-
-.range-selector__active {
-  height: 90px;
-  border-radius: 50px;
-  background: var(--active-pill);
-  border: 1px solid var(--active-pill-border);
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 16px;
-  padding: 0 40px;
+  background: transparent;
+  border: 1px solid transparent;
+  color: #375b71;
+  cursor: pointer;
+  transition: background var(--duration-fast) ease, border-color var(--duration-fast) ease, flex var(--duration-fast) ease;
 }
 
-.range-selector__label {
+.range-selector__item:active {
+  filter: brightness(0.98);
+}
+
+.range-selector__item .iconbox {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  --icon-pad: 0;
+}
+
+.range-selector__item .iconbox__img {
+  width: 40px;
+  height: 40px;
+}
+
+.range-selector__item[aria-pressed="true"] {
+  flex: 1.6 0 0;
+  background: var(--active-pill);
+  border-color: var(--active-pill-border);
+}
+
+.range-selector__item[aria-pressed="false"] {
+  flex: 1 0 0;
+  background: transparent;
+  border-color: transparent;
+}
+
+.range-selector__item:focus-visible {
+  outline: 2px solid rgba(55, 91, 113, 0.35);
+  outline-offset: -2px;
+}
+
+.range-selector__item[aria-pressed="false"]:hover {
+  background: rgba(184, 225, 251, 0.25);
+}
+
+.range-selector__item[aria-pressed="false"]:active {
+  background: rgba(184, 225, 251, 0.35);
+}
+
+.range-selector__item .range-selector__label {
+  display: none;
   font-size: var(--type-base-m-size);
   line-height: var(--type-base-m-line);
   font-weight: 500;
@@ -1375,6 +1413,11 @@ html[data-fav-open="true"] .topbar .iconbox__img {
   text-transform: uppercase;
   letter-spacing: 0.02em;
   white-space: nowrap;
+  pointer-events: none;
+}
+
+.range-selector__item[aria-pressed="true"] .range-selector__label {
+  display: inline;
 }
 
 .iconbox--folding-mirrors {
@@ -1453,8 +1496,8 @@ html[data-fav-open="true"] .topbar .iconbox__img {
 .music__header-right {
   display: flex;
   align-items: center;
-  gap: 8px;
-  min-width: 208px;
+  width: 136px;
+  height: 88px;
   justify-content: flex-end;
 }
 
@@ -1474,17 +1517,19 @@ html[data-fav-open="true"] .topbar .iconbox__img {
 }
 
 .music__sourcebtn {
-  width: 208px;
+  width: 136px;
   height: 88px;
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 0 16px;
+  padding: 0 8px;
   justify-content: flex-end;
   border-radius: 60px;
   border: 0;
   background: transparent;
   cursor: pointer;
+  position: relative;
+  z-index: 6;
 }
 
 .music-card .music__header button .iconbox,
@@ -1495,8 +1540,8 @@ html[data-fav-open="true"] .topbar .iconbox__img {
 
 .music-card .music__header button .iconbox__img,
 .music-card .music__selector-list button .iconbox__img {
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
 }
 
 .music__aux--like,
@@ -1530,7 +1575,7 @@ html[data-fav-open="true"] .topbar .iconbox__img {
 }
 
 .music__chevron .iconbox__img {
-  transform: rotate(-90deg);
+  transform: none;
   transform-origin: center;
 }
 
@@ -1589,7 +1634,8 @@ html[data-fav-open="true"] .topbar .iconbox__img {
 .music__track {
   position: absolute;
   left: 50%;
-  bottom: 205px;
+  top: 560px;
+  bottom: auto;
   transform: translateX(-50%);
   width: 496px;
   color: var(--text-ui);
@@ -1641,6 +1687,12 @@ html[data-fav-open="true"] .topbar .iconbox__img {
   display: block;
 }
 
+.music-card[data-music-source="fm"] .music__cover {
+  width: 242px;
+  height: 242px;
+  border-radius: 50px;
+}
+
 .music__radio-bars {
   height: 56px;
   width: 100%;
@@ -1663,6 +1715,8 @@ html[data-fav-open="true"] .topbar .iconbox__img {
   );
   background-size: 20px 100%;
   background-position: left center;
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0.08) 100%);
+  -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0.08) 100%);
 }
 
 .music__radio-bars::after {
@@ -1739,6 +1793,8 @@ html[data-fav-open="true"] .topbar .iconbox__img {
   padding: 0;
   z-index: 5;
   cursor: pointer;
+  display: grid;
+  place-items: center;
 }
 
 .music__selector-list {
