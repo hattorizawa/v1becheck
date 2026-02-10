@@ -22,7 +22,6 @@
   ];
 
   var activeDriveIndex = 1;
-  var volume = null;
   var notifyTimer = null;
 
   function showNotification(title, text) {
@@ -102,7 +101,8 @@
 
     if (window.REEV && window.REEV.features) {
       if (window.REEV.features.favorites) window.REEV.features.favorites();
-      if (window.REEV.features.volume) volume = window.REEV.features.volume();
+      if (window.REEV.features.voiceAssistant) window.REEV.features.voiceAssistant();
+      if (window.REEV.features.musicWidget) window.REEV.features.musicWidget();
     }
   }
 
@@ -143,9 +143,6 @@
     if (toggle === "toggle") {
       var pressed = btn.getAttribute("aria-pressed") === "true";
       btn.setAttribute("aria-pressed", String(!pressed));
-      if (btn.classList && btn.classList.contains("bottombar__volume")) {
-        volume && volume.syncPanel && volume.syncPanel();
-      }
       if (btn.hasAttribute("data-notify")) {
         var label = btn.getAttribute("aria-label") || btn.textContent || "Action";
         showNotification(label.trim(), "Updated");

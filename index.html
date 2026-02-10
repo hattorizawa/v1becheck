@@ -182,48 +182,114 @@
             </section>
           </div>
 
-          <section class="card music-card" data-node-id="1:843" aria-label="Music">
-            <div class="music__blur" data-node-id="1:844" aria-hidden="true"></div>
+          <section
+            class="card music-card"
+            data-music-card
+            data-music-source="bluetooth"
+            data-music-selector-open="false"
+            aria-label="Music"
+          >
+            <div class="music__view music__view--player" data-music-view="player">
+              <div class="music__header" aria-label="Music header">
+                <div class="music__header-left">
+                  <button class="music__aux music__aux--like" type="button" aria-label="Like" aria-pressed="false" data-music-favorite>
+                    <span class="iconbox" aria-hidden="true">
+                      <img class="iconbox__img" alt="" src="https://www.figma.com/api/mcp/asset/1ff75c9d-fea3-49a5-adc1-54be37d3565f" />
+                    </span>
+                  </button>
+                  <button class="music__aux music__aux--repeat" type="button" aria-label="Repeat">
+                    <span class="iconbox" aria-hidden="true">
+                      <img class="iconbox__img" alt="" src="https://www.figma.com/api/mcp/asset/061f8081-cc39-4ee9-bc54-2c3a62b26fb1" />
+                    </span>
+                  </button>
+                </div>
 
-            <div class="music__topicons" data-node-id="1:848" aria-hidden="true">
-              <span class="iconbox iconbox--chevron">
-                <img class="iconbox__img" data-node-id="1:849" alt="" src="https://www.figma.com/api/mcp/asset/5384f983-7121-482d-9c5a-9dbab8315b64" />
-              </span>
-              <span class="iconbox iconbox--bt music__bt" aria-hidden="true">
-                <img class="iconbox__img" data-node-id="1:850" alt="" src="https://www.figma.com/api/mcp/asset/3131de98-0d4d-4afe-8c0a-4f140d5af3c7" />
-              </span>
-            </div>
-
-            <div class="music__art" data-node-id="1:868" aria-hidden="true">
-              <img class="music__art-img" data-node-id="1:869" alt="" src="https://www.figma.com/api/mcp/asset/9124fbdf-dada-4e7b-ac01-52a28bffb905" />
-            </div>
-
-            <div class="music__meta" data-node-id="1:845">
-              <div class="music__title" data-node-id="1:846">Rush</div>
-              <div class="music__artist" data-node-id="1:847">Masey Calvert</div>
-            </div>
-
-            <div class="music__progress" data-node-id="1:864" aria-label="Track progress">
-              <div class="progressbar" role="presentation">
-                <div class="progressbar__track"></div>
-                <div class="progressbar__fill" style="width: 62%"></div>
+                <div class="music__header-right" aria-label="Music source">
+                  <button class="music__sourcebtn" type="button" aria-label="Select source" data-music-open>
+                    <span class="iconbox iconbox--chevron music__chevron" aria-hidden="true">
+                      <img class="iconbox__img" alt="" src="https://www.figma.com/api/mcp/asset/d3fb0687-08bf-45a2-a5c4-80c3896f0e49" />
+                    </span>
+                    <span class="iconbox music__source-icon" aria-hidden="true">
+                      <img class="iconbox__img" alt="" data-music-source-icon src="https://www.figma.com/api/mcp/asset/c94cd3ba-6935-4a12-a93c-bae4401476b7" />
+                    </span>
+                  </button>
+                </div>
               </div>
-              <div class="music__times">
-                <div class="music__time" data-node-id="1:866">02:30</div>
-                <div class="music__time" data-node-id="1:867">07:53</div>
+
+              <div class="music__body" aria-label="Music content">
+                <div class="music__cover" aria-hidden="true">
+                  <img class="music__cover-img" data-music-cover alt="" src="https://www.figma.com/api/mcp/asset/35c13e6f-96b3-414a-a7fe-a9f26b19c883" />
+                </div>
+
+                <div class="music__meta">
+                  <div class="music__title" data-music-title>Rush</div>
+                  <div class="music__subtitle" data-music-subtitle>Masey Calvert</div>
+                </div>
+              </div>
+
+              <div class="music__track" aria-label="Track">
+                  <div class="music__track-progress" data-music-track="progress">
+                    <div class="progressbar" role="presentation">
+                      <div class="progressbar__track"></div>
+                      <div class="progressbar__fill" data-music-progress-fill style="width: 0%"></div>
+                    </div>
+                    <div class="music__times" aria-label="Time">
+                      <div class="music__time" data-music-time-current>00:00</div>
+                      <div class="music__time" data-music-time-total>03:29</div>
+                    </div>
+                  </div>
+
+                <div class="music__track-radio" data-music-track="radio" aria-label="FM track">
+                  <div class="music__radio-bars"></div>
+                </div>
+              </div>
+
+              <div class="music__controls" aria-label="Playback controls">
+                <button class="control" aria-pressed="false" type="button" aria-label="Previous">
+                  <span class="iconbox control__iconbox" aria-hidden="true">
+                    <img class="iconbox__img control__icon control__icon--prev" alt="" src="https://www.figma.com/api/mcp/asset/1232e94d-b673-49ba-9ead-3cffd05f6011" />
+                  </span>
+                </button>
+                <button class="control" aria-pressed="false" type="button" aria-label="Play" data-music-play-toggle data-playing="false">
+                  <span class="iconbox control__iconbox" aria-hidden="true">
+                    <img class="iconbox__img control__icon" alt="" data-music-play-icon src="https://www.figma.com/api/mcp/asset/0cf0cae0-a59f-4da1-b449-39b3ffda73f9" />
+                  </span>
+                </button>
+                <button class="control" aria-pressed="false" type="button" aria-label="Next">
+                  <span class="iconbox control__iconbox" aria-hidden="true">
+                    <img class="iconbox__img control__icon" alt="" src="https://www.figma.com/api/mcp/asset/62eb3347-32d0-4782-827a-af2d6520ff43" />
+                  </span>
+                </button>
               </div>
             </div>
 
-            <div class="music__controls" data-node-id="1:854" aria-label="Playback controls">
-              <button class="control" data-toggle="toggle" aria-pressed="false" data-node-id="1:855" type="button" aria-label="Previous">
-                <img class="control__icon control__icon--prev" data-node-id="1:856" alt="" src="https://www.figma.com/api/mcp/asset/82123bbb-882d-467e-b846-fce5ce807a65" />
+            <div class="music__view music__view--selector" data-music-view="selector" aria-label="Music selector">
+              <button class="icon-action-btn icon-action-btn--soft music__selector-close" type="button" aria-label="Close source selector" data-music-close>
+                <span class="iconbox" aria-hidden="true">
+                  <img class="iconbox__img" alt="" src="https://www.figma.com/api/mcp/asset/bf0a87f8-011d-4ac3-b2cb-a38d119d469f" />
+                </span>
               </button>
-              <button class="control" data-toggle="toggle" aria-pressed="true" data-node-id="1:858" type="button" aria-label="Pause">
-                <img class="control__icon" data-node-id="1:859" alt="" src="https://www.figma.com/api/mcp/asset/ca09dd52-8f15-4649-8f9f-203d76e08de8" />
-              </button>
-              <button class="control control--wide" data-toggle="toggle" aria-pressed="false" data-node-id="1:861" type="button" aria-label="Next">
-                <img class="control__icon" data-node-id="1:862" alt="" src="https://www.figma.com/api/mcp/asset/3941170c-8c7e-4207-815d-92c0125b3bc8" />
-              </button>
+
+              <div class="music__selector-list" role="listbox" aria-label="Source options">
+                <button class="music-source" type="button" role="option" aria-selected="true" data-music-set-source="bluetooth">
+                  <span class="iconbox" aria-hidden="true">
+                    <img class="iconbox__img" alt="" src="https://www.figma.com/api/mcp/asset/f678af54-0bb0-43e1-bf0d-663be28757a4" />
+                  </span>
+                  <span class="music-source__label">Bluetooth</span>
+                </button>
+                <button class="music-source" type="button" role="option" aria-selected="false" data-music-set-source="usb">
+                  <span class="iconbox" aria-hidden="true">
+                    <img class="iconbox__img" alt="" src="https://www.figma.com/api/mcp/asset/4737fe51-3cce-4b43-bb9e-107328a27e0e" />
+                  </span>
+                  <span class="music-source__label">USB</span>
+                </button>
+                <button class="music-source" type="button" role="option" aria-selected="false" data-music-set-source="fm">
+                  <span class="iconbox" aria-hidden="true">
+                    <img class="iconbox__img" alt="" src="https://www.figma.com/api/mcp/asset/8159fe00-8c41-4058-a56f-1d98036953b2" />
+                  </span>
+                  <span class="music-source__label">FM-radio</span>
+                </button>
+              </div>
             </div>
           </section>
 
@@ -872,14 +938,6 @@
           </main>
         </section>
 
-        <aside class="volume-panel" hidden aria-label="Volume control" style="--volume: 0.62">
-          <div class="volume-panel__slider" data-volume-slider role="slider" aria-label="Volume" aria-valuemin="0" aria-valuemax="100" aria-valuenow="62" tabindex="0">
-            <div class="volume-panel__max" aria-hidden="true">100</div>
-            <div class="volume-panel__handle" data-volume-handle aria-hidden="true">
-              <div class="volume-panel__min">0</div>
-            </div>
-          </div>
-        </aside>
 	      </div>
 
 	      <footer class="bottombar" data-node-id="1:942" aria-label="Bottom bar">
@@ -958,11 +1016,19 @@
           </div>
         </div>
 
-        <button class="bottombar__va" type="button" aria-label="Voice assistant">
-          <img class="bottombar__va-img" alt="" src="https://www.figma.com/api/mcp/asset/c05c6406-51b8-474c-a916-0e8396aa0f17" />
+        <button class="bottombar__va" type="button" aria-label="Voice assistant. Idle" aria-pressed="false" data-va-button data-va-state="default">
+          <span class="bottombar__va-blob" aria-hidden="true">
+            <span class="bottombar__va-pulse">
+              <img class="bottombar__va-img bottombar__va-img--default" alt="" src="https://www.figma.com/api/mcp/asset/d90eb8cf-6fd4-49aa-b859-08bfe56d07af" />
+              <img class="bottombar__va-img bottombar__va-img--activated" alt="" src="https://www.figma.com/api/mcp/asset/01f69ab1-c7a5-4fd9-ad91-c999aafabc21" />
+            </span>
+          </span>
+          <span class="bottombar__va-close" aria-hidden="true" data-va-close>
+            <img class="bottombar__va-close-icon" alt="" src="https://www.figma.com/api/mcp/asset/02db3f59-27ac-4ddf-b0d4-aeab650b9182" />
+          </span>
         </button>
 
-        <button class="bottombar__volume bottombar__btn" type="button" aria-label="Volume" aria-pressed="false" data-toggle="toggle">
+        <button class="bottombar__volume bottombar__btn" type="button" aria-label="Volume">
           <span class="iconbox iconbox--volume" aria-hidden="true">
             <img class="iconbox__img navicon__img--invert" alt="" src="https://www.figma.com/api/mcp/asset/c95ad0e4-4118-4b5f-a6a5-b215943f6b8b" />
           </span>
@@ -975,7 +1041,8 @@
     </div>
 
     <script src="./features/favorites.js"></script>
-    <script src="./features/volume.js"></script>
+    <script src="./features/voice-assistant.js"></script>
+    <script src="./features/music-widget.js"></script>
     <script src="./app.js"></script>
   </body>
 </html>
