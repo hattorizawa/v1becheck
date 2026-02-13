@@ -943,6 +943,27 @@
 	      </div>
 
 	      <footer class="bottombar" data-node-id="1:942" aria-label="Bottom bar">
+          <div class="bottombar__volume-ui" data-bottom-volume-ui hidden>
+            <div
+              class="bottombar__volume-slider"
+              data-bottom-volume-slider
+              role="slider"
+              aria-label="Volume"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="100"
+              tabindex="0"
+            >
+              <div class="bottombar__volume-track" aria-hidden="true">
+                <div class="bottombar__volume-fill" data-bottom-volume-fill aria-hidden="true"></div>
+                <div class="bottombar__volume-thumb" data-bottom-volume-thumb aria-hidden="true"></div>
+              </div>
+            </div>
+            <div class="bottombar__volume-readout" aria-hidden="true">
+              <span class="bottombar__volume-value" data-bottom-volume-value>100</span>
+            </div>
+          </div>
+
 	        <div class="bottombar__driver" aria-label="Driver temperature">
 	          <div class="bottombar__temp-value" data-node-id="I1:942;276:991">27.5°</div>
         </div>
@@ -1045,6 +1066,7 @@
     <script src="./features/favorites.js"></script>
     <script src="./features/voice-assistant.js"></script>
     <script src="./features/music-widget.js"></script>
+    <script src="./features/volume.js"></script>
     <script src="./app.js"></script>
   </body>
 </html>

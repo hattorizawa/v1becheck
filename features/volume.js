@@ -3,97 +3,174 @@
   window.REEV.features = window.REEV.features || {};
 
   window.REEV.features.volume = function initVolume() {
-    var value = 0.62;
+    var STORAGE_KEY = "reev_volume";
+
+    var bottombar = document.querySelector(".bottombar");
     var button = document.querySelector(".bottombar__volume");
-    var panel = document.querySelector(".volume-panel");
-    var slider = document.querySelector("[data-volume-slider]");
-    var handle = document.querySelector("[data-volume-handle]");
+    var ui = document.querySelector("[data-bottom-volume-ui]");
+    var slider = document.querySelector("[data-bottom-volume-slider]");
+    var valueEl = document.querySelector("[data-bottom-volume-value]");
 
-    var dragOffset = 0;
+    var open = false;
     var dragging = false;
+    var autoCloseTimer = null;
+    var volume = 100;
 
-    function clamp(v, min, max) {
-      return Math.min(max, Math.max(min, v));
+    function clampInt(v, min, max) {
+      var n = Math.round(Number(v));
+      if (!Number.isFinite(n)) n = min;
+      return Math.min(max, Math.max(min, n));
     }
 
-    function syncPanel() {
-      if (!button || !panel) return;
-      panel.hidden = button.getAttribute("aria-pressed") !== "true";
+    function volumeToRatio(v) {
+      return clampInt(v, 0, 100) / 100;
+    }
+
+    function setMutedState(isMuted) {
+      if (button) button.classList.toggle("is-muted", !!isMuted);
     }
 
     function render() {
-      if (!panel || !slider) return;
-      value = clamp(value, 0, 1);
-      panel.style.setProperty("--volume", String(value));
-      slider.setAttribute("aria-valuenow", String(Math.round(value * 100)));
+      if (!bottombar || !slider) return;
+      var ratio = volumeToRatio(volume);
+      bottombar.style.setProperty("--volume", String(ratio));
+      slider.setAttribute("aria-valuenow", String(volume));
+      if (valueEl) valueEl.textContent = String(volume);
+      setMutedState(volume <= 0);
+    }
 
-      if (handle) {
-        var sliderRect = slider.getBoundingClientRect();
-        var handleRect = handle.getBoundingClientRect();
-        var handleHeight = handleRect.height || 620;
-        var topMin = 160;
-        var topMax = sliderRect.height - 16 - handleHeight;
-        var top = topMin + (1 - value) * (topMax - topMin);
-        handle.style.top = Math.round(top) + "px";
+    function persist() {
+      try {
+        window.localStorage.setItem(STORAGE_KEY, String(volume));
+      } catch (e) {
+        // ignore
       }
+    }
+
+    function load() {
+      try {
+        var stored = window.localStorage.getItem(STORAGE_KEY);
+        if (stored != null) volume = clampInt(parseInt(stored, 10), 0, 100);
+      } catch (e) {
+        // ignore
+      }
+    }
+
+    function clearAutoClose() {
+      if (!autoCloseTimer) return;
+      window.clearTimeout(autoCloseTimer);
+      autoCloseTimer = null;
+    }
+
+    function armAutoClose() {
+      clearAutoClose();
+      autoCloseTimer = window.setTimeout(function () {
+        setOpen(false);
+      }, 10000);
+    }
+
+    function setOpen(next) {
+      open = !!next;
+      if (!bottombar || !button || !ui) return;
+
+      if (open) {
+        bottombar.setAttribute("data-mode", "volume");
+        button.setAttribute("aria-pressed", "true");
+        ui.hidden = false;
+        armAutoClose();
+        slider && slider.focus && slider.focus();
+      } else {
+        bottombar.removeAttribute("data-mode");
+        button.setAttribute("aria-pressed", "false");
+        ui.hidden = true;
+        clearAutoClose();
+      }
+    }
+
+    function setVolume(next, fromUser) {
+      volume = clampInt(next, 0, 100);
+      render();
+      persist();
+      if (open && fromUser) armAutoClose();
     }
 
     function setFromPointer(evt) {
       if (!slider) return;
       var rect = slider.getBoundingClientRect();
-      var handleHeight = (handle && handle.getBoundingClientRect().height) || 620;
-      var topMin = 160;
-      var topMax = rect.height - 16 - handleHeight;
-      var y = evt.clientY - rect.top - dragOffset;
-      var top = clamp(y, topMin, topMax);
-      value = clamp(1 - (top - topMin) / (topMax - topMin), 0, 1);
-      render();
+      var x = evt.clientX - rect.left;
+      var ratio = rect.width ? x / rect.width : 0;
+      ratio = Math.min(1, Math.max(0, ratio));
+      setVolume(Math.round(ratio * 100), true);
     }
 
-    if (handle) {
-      handle.addEventListener("pointerdown", function (evt) {
-        dragging = true;
-        var rect = handle.getBoundingClientRect();
-        dragOffset = evt.clientY - rect.top;
-        setFromPointer(evt);
-        handle.setPointerCapture && handle.setPointerCapture(evt.pointerId);
-      });
-      handle.addEventListener("pointermove", function (evt) {
-        if (!dragging) return;
-        setFromPointer(evt);
-      });
-      handle.addEventListener("pointerup", function (evt) {
-        dragging = false;
-        handle.releasePointerCapture && handle.releasePointerCapture(evt.pointerId);
-      });
+    function onButtonClick(evt) {
+      evt.preventDefault();
+      evt.stopPropagation();
+      setOpen(!open);
     }
 
-    document.addEventListener("pointerdown", function (evt) {
-      if (!slider || !handle) return;
-      var onHandle = evt.target && evt.target.closest ? evt.target.closest("[data-volume-handle]") : null;
-      if (onHandle) return;
-      var onSlider = evt.target && evt.target.closest ? evt.target.closest("[data-volume-slider]") : null;
-      if (!onSlider) return;
+    function onSliderPointerDown(evt) {
+      if (!open) return;
+      evt.preventDefault();
       dragging = true;
-      dragOffset = (handle && handle.getBoundingClientRect().height) / 2;
       setFromPointer(evt);
       slider.setPointerCapture && slider.setPointerCapture(evt.pointerId);
-    });
+    }
 
-    document.addEventListener("pointermove", function (evt) {
+    function onDocPointerMove(evt) {
       if (!dragging) return;
       setFromPointer(evt);
-    });
+    }
 
-    document.addEventListener("pointerup", function (evt) {
+    function onDocPointerUp(evt) {
       if (!dragging) return;
       dragging = false;
       slider && slider.releasePointerCapture && slider.releasePointerCapture(evt.pointerId);
-    });
+    }
 
-    syncPanel();
+    function onSliderKeyDown(evt) {
+      if (!open) return;
+      var step = evt.shiftKey ? 5 : 1;
+      if (evt.key === "ArrowLeft" || evt.key === "ArrowDown") {
+        evt.preventDefault();
+        setVolume(volume - step, true);
+      }
+      if (evt.key === "ArrowRight" || evt.key === "ArrowUp") {
+        evt.preventDefault();
+        setVolume(volume + step, true);
+      }
+      if (evt.key === "Home") {
+        evt.preventDefault();
+        setVolume(0, true);
+      }
+      if (evt.key === "End") {
+        evt.preventDefault();
+        setVolume(100, true);
+      }
+      if (evt.key === "Escape") {
+        evt.preventDefault();
+        setOpen(false);
+      }
+    }
+
+    if (!bottombar || !button || !ui || !slider) return;
+
+    load();
     render();
+    setOpen(false);
 
-    return { syncPanel: syncPanel, render: render };
+    button.addEventListener("click", onButtonClick);
+    slider.addEventListener("pointerdown", onSliderPointerDown);
+    slider.addEventListener("keydown", onSliderKeyDown);
+    document.addEventListener("pointermove", onDocPointerMove);
+    document.addEventListener("pointerup", onDocPointerUp);
+
+    return {
+      setOpen: setOpen,
+      setVolume: setVolume,
+      getVolume: function () {
+        return volume;
+      },
+    };
   };
 })();

@@ -98,6 +98,7 @@
       if (window.REEV.features.favorites) window.REEV.features.favorites();
       if (window.REEV.features.voiceAssistant) window.REEV.features.voiceAssistant();
       if (window.REEV.features.musicWidget) window.REEV.features.musicWidget();
+      if (window.REEV.features.volume) window.REEV.features.volume();
     }
   }
 
