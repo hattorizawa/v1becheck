@@ -9,6 +9,7 @@
     var button = document.querySelector(".bottombar__volume");
     var ui = document.querySelector("[data-bottom-volume-ui]");
     var slider = document.querySelector("[data-bottom-volume-slider]");
+    var readout = document.querySelector("[data-bottom-volume-readout]");
     var valueEl = document.querySelector("[data-bottom-volume-value]");
 
     var open = false;
@@ -33,7 +34,9 @@
     function render() {
       if (!bottombar || !slider) return;
       var ratio = volumeToRatio(volume);
+      var tone = Math.round(178 + ratio * 77);
       bottombar.style.setProperty("--volume", String(ratio));
+      bottombar.style.setProperty("--volume-tone", String(tone));
       slider.setAttribute("aria-valuenow", String(volume));
       if (valueEl) valueEl.textContent = String(volume);
       setMutedState(volume <= 0);
@@ -77,12 +80,14 @@
         bottombar.setAttribute("data-mode", "volume");
         button.setAttribute("aria-pressed", "true");
         ui.hidden = false;
+        if (readout) readout.hidden = false;
         armAutoClose();
         slider && slider.focus && slider.focus();
       } else {
         bottombar.removeAttribute("data-mode");
         button.setAttribute("aria-pressed", "false");
         ui.hidden = true;
+        if (readout) readout.hidden = true;
         clearAutoClose();
       }
     }

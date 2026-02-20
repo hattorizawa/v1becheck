@@ -154,7 +154,7 @@ button .iconbox__img {
 
 .pill-toggle {
   height: 90px;
-  border-radius: 50px;
+  border-radius: var(--radius-card);
   background: var(--soft-pill);
   border: 1px solid var(--soft-pill-border);
   display: grid;
@@ -197,7 +197,7 @@ button .iconbox__img {
   display: flex;
   align-items: center;
   gap: 32px;
-  border-radius: 50px;
+  border-radius: var(--radius-card);
   background: #ffffff;
   border: 1px solid #dbeefa;
   box-shadow: 50px 0 200px 68px rgba(0, 0, 0, 0.24);
@@ -308,10 +308,10 @@ button .iconbox__img {
 .fav-tile {
   width: 200px;
   height: 200px;
-  border-radius: 50px;
+  border-radius: var(--radius-card);
   border: 1px solid #b9d4e5;
   background: #ffffff;
-  color: #4f6470;
+  color: var(--text-muted-ui);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -353,7 +353,7 @@ button .iconbox__img {
   position: relative;
   width: 200px;
   height: 632px;
-  border-radius: 50px;
+  border-radius: var(--radius-card);
   border: 1px solid #b9d4e5;
   background: #ffffff;
   overflow: hidden;

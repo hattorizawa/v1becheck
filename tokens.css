@@ -33,6 +33,7 @@
   --warning: #ffa827;
 
   --radius-md: 50px;
+  --radius-card: var(--radius-md);
   --radius-pill: 999px;
   --shadow-elev: 0 12px 28px rgba(0, 0, 0, 0.22);
   --shadow-float: 0 10px 26px rgba(0, 0, 0, 0.18);

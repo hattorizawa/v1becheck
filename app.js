@@ -1,4 +1,8 @@
 (function () {
+  function localIconPath(name) {
+    return "icons/" + name;
+  }
+
   function closestButton(el) {
     return el && el.closest ? el.closest("button") : null;
   }
@@ -7,17 +11,17 @@
     {
       key: "eco",
       label: "ECO",
-      icon: "https://www.figma.com/api/mcp/asset/efe87e96-3d63-448a-932a-fae931b5b708",
+      icon: localIconPath("eco.svg"),
     },
     {
       key: "normal",
       label: "NORMAL",
-      icon: "https://www.figma.com/api/mcp/asset/3334ed65-b136-44f0-8dc8-261a4bfa07e5",
+      icon: localIconPath("normal.svg"),
     },
     {
       key: "sport",
       label: "SPORT",
-      icon: "https://www.figma.com/api/mcp/asset/fb61e296-daec-44d3-ac30-5fe772c3b180",
+      icon: localIconPath("sport.svg"),
     },
   ];
 

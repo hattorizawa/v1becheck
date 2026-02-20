@@ -1,6 +1,9 @@
 (function () {
   window.REEV = window.REEV || {};
   window.REEV.features = window.REEV.features || {};
+  var localIconPath = function (name) {
+    return "icons/" + name;
+  };
 
   window.REEV.features.musicWidget = function initMusicWidget() {
     var card = document.querySelector("[data-music-card]");
@@ -17,26 +20,25 @@
     var currentTimeEl = card.querySelector("[data-music-time-current]");
     var totalTimeEl = card.querySelector("[data-music-time-total]");
 
-    var pauseIcon = "https://www.figma.com/api/mcp/asset/0cf0cae0-a59f-4da1-b449-39b3ffda73f9";
-    var playIcon =
-      "https://www.figma.com/api/mcp/asset/629b1947-95a1-41e0-b084-f3f0e8cf0859";
+    var pauseIcon = localIconPath("Pause.svg");
+    var playIcon = localIconPath("Play.svg");
 
     var sources = {
       bluetooth: {
-        icon: "https://www.figma.com/api/mcp/asset/c94cd3ba-6935-4a12-a93c-bae4401476b7",
-        cover: "https://www.figma.com/api/mcp/asset/35c13e6f-96b3-414a-a7fe-a9f26b19c883",
+        icon: localIconPath("Bluetooth Enabled.svg"),
+        cover: "assets/media/35c13e6f-96b3-414a-a7fe-a9f26b19c883.png",
         title: "Rush",
         subtitle: "Masey Calvert",
       },
       usb: {
-        icon: "https://www.figma.com/api/mcp/asset/96d5f611-8cfa-46d3-8470-969dde7f9b35",
-        cover: "https://www.figma.com/api/mcp/asset/a30a135d-1abf-4e20-867f-40e0486e4030",
+        icon: localIconPath("USB.svg"),
+        cover: "assets/media/c1f946b7-46e2-4f53-a7f1-98e43f190a99.png",
         title: "LANLAO KING",
         subtitle: "Skai isyourgod",
       },
       fm: {
-        icon: "https://www.figma.com/api/mcp/asset/d39114f3-205f-4761-8a6a-4eae6638f6a7",
-        cover: "https://www.figma.com/api/mcp/asset/d2edf7aa-6d85-4d59-9696-b6857f0ae433",
+        icon: localIconPath("Onlline Radio.svg"),
+        cover: "assets/media/32e23e65-4981-4e9f-a6ed-fd67178c0f14.png",
         title: "Rock Radio",
         subtitle: "95.20 FM",
       },
